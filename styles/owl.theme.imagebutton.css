@@ -1,0 +1,94 @@
+/**
+ * Owl Carousel v2.3.3
+ * Copyright 2013-2018 David Deutsch
+ * Licensed under: SEE LICENSE IN https://github.com/OwlCarousel2/OwlCarousel2/blob/master/LICENSE
+ */
+/*
+ *  Green theme - Owl Carousel CSS File
+ */
+.slider {width: 100%;}
+.owl-theme-imagebutton .owl-nav {
+    margin-top: 10px;
+    text-align: center;
+    -webkit-tap-highlight-color: transparent; 
+}
+.owl-theme-imagebutton .owl-nav [class*='owl-'] {
+    color: #FFF;
+    font-size: 14px;
+    margin: 5px;
+    padding: 4px 7px;
+    background: #D6D6D6;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 3px; 
+}
+
+.owl-theme-imagebutton .owl-nav .disabled {
+    opacity: 0.5;
+    cursor: default; 
+}
+
+.owl-theme-imagebutton .owl-nav.disabled + .owl-dots {
+    margin-top: 10px; 
+}
+
+.owl-theme-imagebutton .owl-dots {
+    text-align: center;
+    -webkit-tap-highlight-color: transparent; 
+    position: absolute;
+    bottom: -45px;
+    left: 0;
+    right: 0;
+}
+.owl-theme-imagebutton .owl-dots .owl-dot {
+    display: inline-block;
+    zoom: 1;
+    *display: inline; 
+}
+.owl-theme-imagebutton .owl-dots .owl-dot span {
+    width: 12px;
+    height: 12px;
+    margin: 5px 4px;
+    background: #ACACAC;
+    border: 2px solid #FFFFFF;
+    display: block;
+    -webkit-backface-visibility: visible;
+    transition: opacity 200ms ease;
+    border-radius: 30px; 
+ 
+}
+.owl-theme-imagebutton .owl-dots .owl-dot.active span {
+    background: #FFFFFF; 
+    border: 2px solid #C10A26;
+
+}
+.owl-theme-imagebutton .owl-dots .owl-dot:hover span 
+{
+    background: #C10A26;    
+}
+
+.owl-theme-imagebutton .owl-prev, .owl-theme-imagebutton .owl-next  
+{
+    top: 50%;
+    width: 39px;
+    height: 39px;
+    //opacity: 0.8;
+    position: absolute;
+    margin-top: -19px!important;
+}
+
+.owl-theme-imagebutton .owl-nav button.owl-prev {
+    background: url(/img/arrows.png) no-repeat;/**/
+    background-position: 0px 0px;
+    left: 2%;
+}
+
+.owl-theme-imagebutton .owl-nav button.owl-next {
+    background: url(/images/arrows.png) no-repeat;/**/
+    background-position: -39px 0px;
+    right: 2%;
+}
+.owl-theme-imagebutton .owl-nav button.owl-prev:hover, .owl-theme-imagebutton .owl-nav button.owl-next:hover
+{
+    opacity: 1;   
+}

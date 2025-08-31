@@ -1,0 +1,167 @@
+a, a:visited {color:#000000; outline: none;}
+
+.note {
+    background-color: #FFFFFF; 
+    border: 2px solid #b4c8d3;
+    border-radius: 4px; 
+    padding: 20px 30px; 
+    margin-bottom: 10px;
+}
+
+
+
+
+
+/*table*/
+.table-content {border-spacing: 0px; width:100%;
+	margin: 10px auto;	
+	border:#dedede 1px solid;
+	//border-radius: 4px;
+	//box-shadow: 0 1px 2px #d1d1d1;
+}
+.table-content th:first-child {border-top-left-radius: 4px;}
+.table-content th:last-child {border-top-right-radius: 4px;}
+.table-content th {
+	padding:18px;
+	border-bottom:1px solid #e5e5e5;
+	background: #f8f8f8;
+	vertical-align: middle;
+	color: #000000;
+}
+.table-content tr {text-align: center; padding-left:20px;}
+.table-content tr td {background: #FFFFFF; vertical-align: middle; padding:18px; border-bottom: 1px solid #e5e5e5; border-left: 1px solid #dedede; }
+.table-content tr td:first-child {border-left: 0 none; padding-left: 20px; text-align: left;}
+.table-content tr:last-child > td {border-bottom: 0 none;}
+//.table-content tr:last-child td:first-child {border-bottom-left-radius: 4px;}
+//.table-content tr:last-child td:last-child {border-bottom-right-radius: 4px;}
+.table-content tr:nth-child(2n) {background: #f9f9f9;} 
+.table-content.no_strip tr:nth-child(2n) {background: inherit!important;} 
+
+.table-content.no-border {border: none!important;}
+.table-content.no-border tr, .table-content.no-border td {border: none!important;}
+
+
+
+.mce-content-body .image_gallery_page {border: 1px dashed #CCCCCC; padding: 10px;}
+.mce-content-body .image_gallery_page img {padding-right: 10px; height: 100px; float: left; display: inline-block;}
+.mce-content-body .image_gallery_page:after {content: ''; display: block; clear: both;}
+
+
+/*gallery*/
+.image_gallery_page:after {content:""; display:table; width: 100%;}
+.image_gallery_page .lightgallery_adaptive {    
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    
+    justify-content: left;
+    -webkit-justify-content: left;
+    -moz-justify-content: left;
+    -ms-justify-content: left;
+    
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;}
+.image_gallery_page li {box-shadow: none!important; width: auto!important; height: 300px!important;}
+.image_gallery_page a {border: none!important;}
+.image_gallery_page img {border: 1px solid #e8e8e8; padding: 0; margin-right: 10px; height: 100%;}
+
+ul.image_gallery {display: flex; flex-wrap: wrap; justify-content: center; align-items: stretch;}
+.image_gallery li {width: 20%; background: none!important; list-style: none!important;
+text-align: center;
+box-sizing: border-box;
+padding: 5px;
+
+}
+.image_gallery li > div.img {width: 100%; height: 200px;  line-height: 200px; 
+    display: inline-block; vertical-align: middle; 
+	box-sizing: border-box;
+    -webkit-box-shadow: 1px 1px 5px 0px rgba(50, 50, 50, 0.3);
+	-moz-box-shadow:    1px 1px 5px 0px rgba(50, 50, 50, 0.3);
+	box-shadow:         1px 1px 5px 0px rgba(50, 50, 50, 0.3);
+	border: 1px solid #CCCCCC; 
+	position: relative;
+	overflow: hidden;
+}
+
+.image_gallery li img {max-height: 100%; margin: 0; max-width: 100%; display: inline; vertical-align: middle;}
+.image_gallery .descr {padding-top: 10px;}
+
+
+
+.image_gallery_w33
+{
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    -ms-justify-content: space-between;
+    
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+}
+.image_gallery_w33 li {width: 33.3%; padding: 0!important; text-align: center; padding: 30px; list-style: none!important; background: none!important;}
+.image_gallery_w33 li img {max-width: 100%;}
+
+
+
+/*custom_form*/
+.custom_form .place {width: 48%; margin-right: 2%; float: left; margin-bottom: 10px; height: 80px;}
+.custom_form .important {color: #FF0202;}
+.custom_form .date_calendar {width: 48%!important; }
+.custom_form .date_calendar input {padding: 10.5px!important;}
+
+
+
+a.filemanager {background: url('/images/file/file.png') no-repeat scroll 0 50%; text-align: left !important; line-height: 20px; padding: 4px 0 8px 40px; display: block;}
+a.filemanager[href$=".doc"]   	{background: url('/images/file/doc.png') no-repeat scroll 0 50%;}
+a.filemanager[href$=".docx"]  	{background: url('/images/file/doc.png') no-repeat scroll 0 50%;}
+a.filemanager[href$=".xls"]   	{background: url('/images/file/xls.png') no-repeat scroll 0 50%;}
+a.filemanager[href$=".xlsx"]   	{background: url('/images/file/xls.png') no-repeat scroll 0 50%;}
+a.filemanager[href$=".ppt"]   	{background: url('/images/file/ppt.png') no-repeat scroll 0 50%;}
+a.filemanager[href$=".pps"]     {background: url('/images/file/ppt.png') no-repeat scroll 0 50%;}
+a.filemanager[href$=".pptx"]   	{background: url('/images/file/ppt.png') no-repeat scroll 0 50%;}
+a.filemanager[href$=".pdf"]   	{background: url('/images/file/pdf.png') no-repeat scroll 0 50%;}
+a.filemanager[href$=".rar"]   	{background: url('/images/file/archive.png') no-repeat scroll 0 50%;}
+a.filemanager[href$=".zip"]   	{background: url('/images/file/archive.png') no-repeat scroll 0 50%;}
+a.filemanager[href$=".7z"]   	{background: url('/images/file/archive.png') no-repeat scroll 0 50%;}
+
+ 
+/*checkbox*/
+.content_container .styled input[type="checkbox"] + label {
+    background: url(/images/checkbox_big.png) 0 0 no-repeat;
+    padding-left: 30px; 
+    height: 23px;
+    display: inline-block;
+    padding-right: 20px;
+    font-size: 22px;
+    line-height: 24px;
+    cursor: pointer;
+}
+.content_container .styled input[type="checkbox"]:checked + label {
+    background-position: 0 -23px;
+}
+
+.content_container .styled input[type="checkbox"] {
+    left: -9999px;
+    position: absolute;
+}
+.content_container .styled input[type="radio"], .content_container .styled input[type="checkbox"] {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: medium none;
+}
+
+
+img.styled {border: 1px solid #999999;    
+	-webkit-box-shadow: 1px 1px 5px 0px rgba(50, 50, 50, 0.5);
+	-moz-box-shadow:    1px 1px 5px 0px rgba(50, 50, 50, 0.5);
+	box-shadow:         1px 1px 5px 0px rgba(50, 50, 50, 0.5);
+}

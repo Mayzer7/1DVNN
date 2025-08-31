@@ -1,0 +1,22 @@
+.bx-breadcrumb {
+	//margin: 20px 0 10px 0;
+	padding: 20px 30px 10px 0px;
+	font-size: 0.75rem;
+	color: #888888!important;
+}
+.bx-breadcrumb span.arrow {padding: 0 3px 0 0;}
+.bx-breadcrumb i {
+	//color: #b5bdc2;
+	vertical-align: middle;
+	margin-right: 5px;
+}
+.bx-breadcrumb .bx-breadcrumb-item {
+	float: left;
+	margin-bottom: 10px;
+	white-space: nowrap;
+	vertical-align: middle;
+	margin-right: 10px;
+}
+.bx-breadcrumb .bx-breadcrumb-item span {white-space: normal;}
+.bx-breadcrumb .bx-breadcrumb-item a {border-bottom: none; color:#888888;}
+.bx-breadcrumb .bx-breadcrumb-item a:hover {}

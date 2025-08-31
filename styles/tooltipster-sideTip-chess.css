@@ -1,0 +1,69 @@
+.tooltipster-chess .tooltipster-box {
+    background-color: #FFF;
+    border-radius: 0;
+    width: 350px;
+    position: fixed;   
+    left: 65px;
+    bottom: 70;
+    border-radius: 4px; 
+    color: #001d36;
+    border: none;
+    overflow: hidden;
+    padding: 10px;
+    border: 3px solid #e40f0f;
+}
+.tooltipster-chess .tooltipster-content {color: #FFF; padding: 6px 8px;}
+
+.tooltipster-chess table {color: #001d36; margin: 10px 0; font-size: 0.9rem; width: 100%; border-spacing: 0; border-collapse: collapse; padding-top: 5px;}
+.tooltipster-chess table tr {border-bottom: 1px dotted #cfdfec}
+.tooltipster-chess table tr td:nth-child(2){text-align: right;} 
+.tooltipster-chess .price {color: #001d36; font-size: 1.2rem; font-weight: 500; padding: 10px 0; text-align: center;}
+
+
+.tooltipster-sidetip.tooltipster-chess .status_templates {margin-bottom: 10px; background-color: #cfdfec;  color: #001d36;}
+.tooltipster-sidetip.tooltipster-chess img {max-width: 100%; max-height: 300px; display: block; margin: 0 auto;}
+
+
+.tooltipster-sidetip.tooltipster-bottom.tooltipster-chess .tooltipster-arrow {margin-top: -7px;}
+.tooltipster-sidetip.tooltipster-top .tooltipster-arrow {margin-bottom: 1px;} 
+
+.tooltipster-sidetip.tooltipster-chess.tooltipster-left .tooltipster-arrow,
+.tooltipster-sidetip.tooltipster-chess.tooltipster-right .tooltipster-arrow {
+    height: 22px;
+    margin-left: 0;
+    margin-top: -11px;
+    width: 11px;
+}
+.tooltipster-sidetip.tooltipster-chess .tooltipster-arrow-background {
+    border: 11px solid transparent;
+}
+.tooltipster-sidetip.tooltipster-chess.tooltipster-bottom .tooltipster-arrow-background {
+    border-bottom-color: #eaf2f9;
+    top: 4px;
+}
+.tooltipster-sidetip.tooltipster-chess.tooltipster-left .tooltipster-arrow-background {
+    border-left-color: #eaf2f9;
+    left: -4px;
+}
+.tooltipster-sidetip.tooltipster-chess.tooltipster-right .tooltipster-arrow-background {
+    border-right-color: #eaf2f9;
+    left: 4px;
+}
+.tooltipster-sidetip.tooltipster-chess.tooltipster-top .tooltipster-arrow-background {
+    border-top-color: #eaf2f9;
+    top: -4px;
+}
+.tooltipster-sidetip.tooltipster-chess .tooltipster-arrow-border {
+    border-width: 11px;
+}
+.tooltipster-sidetip.tooltipster-chess.tooltipster-bottom .tooltipster-arrow-uncropped {
+    top: -11px;
+}
+.tooltipster-sidetip.tooltipster-chess.tooltipster-right .tooltipster-arrow-uncropped {
+    left: -11px;
+}
+
+.tooltipster-sidetip.tooltipster-chess.tooltipster-bottom .tooltipster-arrow-border {border-bottom-color:#cfdfec;}
+.tooltipster-sidetip.tooltipster-chess.tooltipster-left .tooltipster-arrow-border {border-left-color:#cfdfec;}
+.tooltipster-sidetip.tooltipster-chess.tooltipster-right .tooltipster-arrow-border {border-right-color:#cfdfec;}
+.tooltipster-sidetip.tooltipster-chess.tooltipster-top .tooltipster-arrow-border {border-top-color:#cfdfec;}

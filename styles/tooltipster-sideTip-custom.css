@@ -1,0 +1,41 @@
+.tooltipster-sidetip.tooltipster-custom .tooltipster-box {
+    background: none;
+    border: none;
+}
+.tooltipster-sidetip.tooltipster-bottom .tooltipster-box {margin:0!important;}
+
+.tooltipster-sidetip.tooltipster-custom.tooltipster-top .tooltipster-box {margin-bottom:7px}
+.tooltipster-sidetip.tooltipster-custom .tooltipster-content {color:#fff;
+    padding: 15px 16px;
+    text-align: left;
+}
+.tooltipster-sidetip.tooltipster-custom .tooltipster-arrow-background {display:none}
+.tooltipster-sidetip.tooltipster-custom.tooltipster-bottom .tooltipster-arrow-border {border-bottom-color:#FFFFFF}
+.tooltipster-sidetip.tooltipster-custom.tooltipster-left .tooltipster-arrow-border {border-left-color:#FFFFFF}
+.tooltipster-sidetip.tooltipster-custom.tooltipster-right .tooltipster-arrow-border{border-right-color:#FFFFFF}
+.tooltipster-sidetip.tooltipster-custom.tooltipster-top .tooltipster-arrow-border {border-top-color:#FFFFFF}
+
+.tooltipster-sidetip.tooltipster-custom .tooltipster-arrow {display: none; left: 30px!important; top: 7px;}
+
+
+.tooltipster-sidetip.tooltipster-custom .tooltipster-content .digit {
+    background: linear-gradient(to right, #ff0d29 0%, #ff7d04 100%);
+    color: #000000;
+    color: #FFFFFF!important;
+    text-align: center;
+    display: inline-block;
+    border-radius: 5px;
+    padding: 15px 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.tooltipster-sidetip.tooltipster-custom .tooltipster-content .info {
+    margin-top: 3px; 
+    background-color: #001d36;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 0.9rem; 
+    font-weight: bold;
+    color: #FFF;
+    font-weight: 300;
+} 

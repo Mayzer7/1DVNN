@@ -1,0 +1,156 @@
+.progress .procent {padding: 23px 0 0 30px;}
+.progress .procent .value, .progress .procent_mobile .value {font-weight: 800; padding-left: 10px;}
+.progress .procent .indicator {
+    background-color: #e7e7e7;
+    padding: 2px;
+    width: 290px; height: 14px;
+    margin: 3.5px 0 0 10px;
+    position: relative;
+}
+.progress_container{
+    padding-right: 64px;
+    margin-bottom: 96px;
+}
+.progress_content{
+    overflow-x: hidden;
+}
+.progress .indicator .val 
+{
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3Cg fill='none' stroke='%23902525' %3E%3Cline x1='0' y1='0' x2='300' y2='0' style='stroke-dasharray: 10 2; stroke-width: 20px;' /%3E%3C/g%3E%3C/svg%3E");
+    overflow: hidden; width: 0; height: 10px;
+}
+.progress .deadline {padding: 2px 0 0 10px; font-size: 0.9rem; font-weight: 600;}
+
+
+.progress .descr_left {flex: 0 0 50%;background-color: #f5f5f5;padding: 32px 24px;}
+.progress .descr_left .descr {font-size: 0.85rem; padding-top: 10px; line-height: 1.2;display: grid;grid-template-columns: repeat(2, 1fr);}
+.progress .descr_left .descr ul{grid-column: span 2;}
+.progress .descr_left .descr .date_header {font-size: 1.5rem; font-weight: 700; margin-bottom: 5px;text-transform: capitalize;}
+.progress .descr_left .descr .date_header span{font-weight: 400;font-size: 1.5rem;}
+.progress .descr_left .descr ul {list-style: none; padding: 0; text-align: left; margin: 0;}
+.progress .descr_left .descr li {line-height: 1.2; position: relative; padding-top: 5px; padding-left: 15px; margin-left: 0px;font-size: 1rem;}
+.progress .descr_left .descr li:before {background-color: #9D432C; content:''; position: absolute; width: 6px; height: 6px; left:0; top: 11px; border-radius: 50%;}
+.progress .descr_left .descr li:not(:last-child){margin-bottom: 16px;}
+.progress .progress_menu .progress_select {float: left; margin-right: 10px;}
+.progress .progress_menu .progress_select, .progress .progress_menu .progress_select a {
+    background-color: #001d36; 
+    color: #001d36; 
+    background-color: #FFF;
+    width: 150px;
+    height: 40px;
+    line-height: 35px;
+    text-align: center;
+    position: relative;
+}
+.descr b{
+    font-size: 1rem;
+    color: #6F6F6F;
+    font-weight: 400;
+    line-height: 120%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+@-moz-document url-prefix() {
+    .progress .descr_left .descr ul{
+    margin-top: 30px;
+}
+}
+.descr b span{font-size: 24px;
+    color: #9D432C;
+    font-weight: 700;
+    line-height: 120%;
+    margin-left: 20px;}
+.progress_menu{position: relative;padding-bottom: 32px;margin-bottom: 32px;}
+.progress_menu::after{content: '';position: absolute;left: 0;width: 100%;height: 1px; bottom: 0;background-color: #D9D9D9;}
+.progress .progress_menu .progress_select .items {border: 1px solid #D9D9D9; cursor: pointer; position: absolute; left: 0; top: 0; overflow: hidden; width: 100%; height: 100%;}
+.progress .progress_menu .progress_select.month_select .items {border: 1px solid #D9D9D9;}
+.progress .progress_menu .progress_select:hover .items.has_select {height: auto;}
+.progress .progress_menu .progress_select a {display: block; text-decoration: none; background-color: #FFF; z-index: 1;}
+.progress .progress_menu .progress_select a strong {font-weight: 600;}
+.progress .progress_menu .progress_select a:hover:not(:first-child){background-color: #edf6ff;} 
+.progress .progress_menu .progress_select .items.has_select a.active {background-color: #ffeded;}
+.progress .progress_menu .progress_select .has_select a:first-child:before{
+    position: absolute;
+    position: absolute;
+    content: "\f107";
+    font-family: "FontAwesome";
+    right: 12px;
+}
+.progress .progress_menu .progress_select:hover .has_select a:first-child:before {
+    transform: rotate(180deg);
+    top: 2px;
+}
+.progress .progress_menu .progress_select .items.min {height: 100%!important;}
+
+
+
+
+
+.progress .progress_menu .years a {
+    border: 1px solid #b1c5d6; color: #54697a; text-decoration: none; 
+    margin: 0 10px 10px 0; 
+    padding: 6px 10px 8px 10px; 
+    display: inline-block; width: 100px;
+    text-align: center;
+}
+.progress .progress_menu .years a.active {color: #FFF; background-color: #001d36; border: 1px solid #001d36;}
+.progress .progress_menu .months a {
+    background-color: #e8ecf0; 
+    color: #001d36; 
+    padding: 6px  8px 8px 8px; 
+    font-size: 0.9rem;
+    display: inline-block; 
+    margin: 0 10px 10px 0; 
+    width: 100px; 
+    text-align: center; 
+    text-decoration: none;
+}
+.progress .progress_menu .months a.active {color: #FFF; background: linear-gradient(to right, #ff0d29 0%, #ff7d04 100%);}
+
+
+.progress .descr_left .descr_container {padding-bottom: 15px; overflow: hidden; position: relative; margin-bottom: 20px;}
+
+
+.progress .content {flex: 0 0 50%; padding-left: 20px;max-width: 50%;position: relative;}
+.progress .content .slider_progress {padding-bottom: 40px;} 
+.progress .content .slider_progress .item {width: 100%; margin: 0 20px 10px 0; height: 100%; overflow: hidden;}
+.progress .content .slider_progress .item .img {overflow: hidden; width: 100%; height: 100%;}
+.progress .content .slider_progress .item a img{width: 100%; height: 100%; object-fit: cover;}
+.progress .content .slider_progress.owl-theme .owl-nav button.owl-next, .progress .content .slider_progress.owl-theme .owl-nav button.owl-prev {margin-top: -10px!important; z-index: 9;bottom: -30px !important;left: unset !important;}
+.content .slider_progress.owl-theme .owl-nav button.owl-prev{right: 50px;}
+.content .slider_progress.owl-theme .owl-nav button.owl-prev.disabled path{fill: unset !important;}
+.slider_progress .owl-dots{max-height: 56px; height: 100%;background-color: #363432;bottom: 4px !important;margin-bottom: 0 !important;display: flex;}
+.slider_progress .owl-dots span{height: 3px!important;width: 24px !important;}
+.slider_progress.owl-theme .owl-nav{
+    position: relative !important;
+    text-align: unset !important;
+}
+/*.col-xl-  (>= 1200px)*/
+@media screen and (min-width: 1200px)
+{
+       
+}
+/*.col-lg-  (>= 992px)*/
+@media screen and (max-width: 1200px)
+{
+    .progress .content, .progress .descr_left {width: 100%; flex: 0 0 100%; padding-bottom: 20px;}
+    .progress .content {padding-left: 0;}
+    .progress .descr_left .descr_container {padding: 0; margin: 0;}
+}
+/*.col-md-  (>= 768px)*/
+@media screen and (max-width: 991px)
+{
+    
+}
+/*.col-sm-  (>= 576px)*/
+@media screen and (max-width: 767px)
+{
+    
+}
+/*.col-*/
+@media screen and (max-width: 575px)
+{
+    
+}
+

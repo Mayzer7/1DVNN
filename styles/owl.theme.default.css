@@ -1,0 +1,121 @@
+/**
+ * Owl Carousel v2.3.3
+ * Copyright 2013-2018 David Deutsch
+ * Licensed under: SEE LICENSE IN https://github.com/OwlCarousel2/OwlCarousel2/blob/master/LICENSE
+ */
+/*
+ *  Green theme - Owl Carousel CSS File
+ */
+.slider {width: 100%;}
+.owl-theme .owl-nav {
+    margin-top: 10px;
+    text-align: center;
+    -webkit-tap-highlight-color: transparent; 
+}
+.owl-theme .owl-nav [class*='owl-'] {
+    color: #FFF;
+    font-size: 14px;
+    margin: 5px;
+    padding: 4px 7px;
+    background: #D6D6D6;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 3px; 
+}
+
+.owl-theme .owl-nav .disabled {
+    opacity: 0.5;
+    cursor: default; 
+}
+
+.owl-theme .owl-nav.disabled + .owl-dots {
+    margin-top: 10px; 
+}
+
+.owl-theme .owl-dots {
+    text-align: center;
+    -webkit-tap-highlight-color: transparent; 
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+}
+.owl-theme .owl-dots .owl-dot {
+    display: inline-block;
+    zoom: 1;
+    *display: inline; 
+    margin: 0 3px;
+    border: 1px solid rgba(255,255,255,0);
+}
+.owl-theme .owl-dots .owl-dot span {
+    width: 12px;
+    height: 12px;
+    margin: 3px;
+    background: #a4bbcf;
+    display: block;
+    -webkit-backface-visibility: visible;
+    transition: opacity 200ms ease;
+    border-radius: 30px; 
+ 
+}
+.owl-theme .owl-dots .owl-dot.active 
+{
+    border: 1px solid #007eff;
+    border-radius: 50%;
+}
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+    background: #FFF; 
+}
+
+
+
+.owl-theme .owl-nav button.owl-next, .owl-theme .owl-nav button.owl-prev
+{
+    background: rgba(0,126,255,0.7);
+    border-radius: 50%;
+    font-size: 30px;  
+    top: 50%; 
+    margin-top: -23px!important;
+    width: 46px;
+    height: 46px;
+    position: absolute;
+    border: none;
+    outline: none;
+}
+.owl-theme .owl-nav [class*='owl-']:hover {
+      color: #FFF;
+      text-decoration: none; 
+      opacity: 1;
+}
+.owl-theme .owl-nav button.owl-prev {left: 2%;}
+.owl-theme .owl-nav button.owl-next {right: 2%;}
+
+
+.owl-theme .owl-nav button.owl-prev svg,.owl-theme .owl-nav button.owl-next svg {
+    position: absolute;
+    top: 50%;
+    margin-top: -12px;   
+    left: 50%;
+    margin-left: -12px;
+}
+
+.owl-next.disabled path, .owl-prev.disabled path {fill: #CCCCCC!important;}
+
+
+/*small-controls*/
+.small-controls.owl-theme .owl-nav button.owl-next, .small-controls.owl-theme .owl-nav button.owl-prev {
+    width: 35px;
+    height: 35px;
+}
+.small-controls.owl-theme .owl-nav button.owl-prev svg,.small-controls.owl-theme .owl-nav button.owl-next svg {
+    width: 21px;
+    height: 21px;
+    margin-top: -10.5px;
+    margin-left: -10.5px;
+}
+.small-controls.owl-theme .owl-dots .owl-dot span {
+    width: 9px;
+    height: 9px;
+}
+
+ 

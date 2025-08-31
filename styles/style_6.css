@@ -1,0 +1,118 @@
+.main_slider_container {padding: 0!important;}
+.slider .content_container {z-index:2; width: 100%; height: 100%; position: absolute; left: 0;  right: 0; top: 0; background-color: transparent; color: #FFF;}
+
+.slider .item {position: relative; height: 400px; background-size: contain!important;}
+
+.slider .right_img {flex: 0 0 40%; width: 40%; right: 0; top: 0; position: absolute; height: 100%;}
+.slider .right_img img {max-height: 340px; display: block; width: auto;}
+
+.slider .slider_content {color: #FFF; height: 100%;}
+.slider .slider_content h2 {font-size: 2rem; color: #FFF; font-weight: 800; text-transform: uppercase; line-height: 1.3;}
+.slider .slider_content .descr {line-height: 1.5;}
+
+.slider .slider_content ul li {
+    font-size: 1.3rem; line-height: 1.4; 
+    list-style: none; position: relative; 
+    padding-left: 15px; text-align: left;
+}
+
+.slider .slider_content ul li::before {
+    width: 6px;
+    height: 6px;
+    left: 0;
+    top: 13.5px;
+    border-radius: 50%;
+    background-color: #ff7d04;
+    content: '';
+    position: absolute;
+}
+
+.slider .slider_content .btn {margin-right: 15px;}
+.slider .slider_content .btn img {width: auto!important; margin-right: 10px; display: inline-block;}
+
+.slider .slider_content .btn.style1 {background: none; border: 1px solid #FFF;}
+.slider .slider_content .btn.style1:hover {background: linear-gradient(to right, #0369d2 0%, #248dfa 100%);}
+
+/* slick-стили */
+.engineer_slider-wrapper .slick-next{
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    right: 48px;
+    bottom: 56px;
+    cursor: pointer;
+}
+.engineer_slider-wrapper .slick-prev{
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    right: 86px;
+    bottom: 56px;
+    cursor: pointer;
+}
+.engineer_slider-wrapper .slick-dots{
+    display: flex;
+    list-style: none;
+    gap: 8px;
+    position: absolute;
+    bottom: 56px;
+    left: 48px;
+}
+
+.engineer_slider-wrapper .slick-dots li.slick-active button{
+    background-color: #000;
+    border: none;
+    width: 24px;
+    height: 3px;
+    cursor: pointer;
+}
+.engineer_slider-wrapper .slick-dots li button{
+    background-color: rgba(0, 0, 0, 0.20);
+    border: none;
+    width: 24px;
+    height: 3px;
+    color: transparent;
+    cursor: pointer;
+}
+.engineer_slide-text{
+    background-color: #F5F5F5;
+    padding: 56px 48px !important;
+    position: relative;
+}
+.engen_icon_box{
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/*.col-xl-  (>= 1200px)*/
+@media screen and (min-width: 1200px)
+{
+       
+}
+/*.col-lg-  (>= 992px)*/
+@media screen and (max-width: 1200px)
+{
+     
+}
+/*.col-md-  (>= 768px)*/
+@media screen and (max-width: 991px)
+{
+    .slider .slider_content {text-align: center;}
+    .slider .slider_content ul {margin: 0 auto; display: inline-block;}    
+}
+/*.col-sm-  (>= 576px)*/
+@media screen and (max-width: 767px)
+{
+    .slider .slider_content h2 {font-size: 1.5rem;}
+    .slider .slider_content ul li {font-size: 1.1rem;}
+}
+/*.col-*/
+@media screen and (max-width: 575px)
+{
+    .slider .slider_content h2 {font-size: 1.3rem;}
+    .slider .slider_content ul li {font-size: 1rem;} 
+    .slider .slider_content .btn {margin: 10px;}
+}

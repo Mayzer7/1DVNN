@@ -1,0 +1,165 @@
+
+.clear {clear: both; height: 0px; overflow: hidden; display: block;}
+.clearfix:before,.clearfix:after {content:""; display:table;}
+.clearfix:after {clear:both;}
+.clearfix { zoom:1;}
+
+.clear_after:after {content: " "; clear: both; display: table;}
+
+
+.clear_after:after {content: ""; display: table; clear: both;}
+
+.delimeter {border-top: 1px solid #D8D8D8; height: 1px; clear: both; margin: 10px 0;}
+
+/*flex*/
+.row-0, .row-0-0 {flex-wrap: wrap; display: flex; margin: 0;}
+.row-0-0 > div {padding: 0;}
+.flex_vertical_center {height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;}
+
+/*text*/
+.text07 {font-size: 0.7rem;}
+.text08 {font-size: 0.8rem;}
+.text09 {font-size: 0.9rem;}
+.text1 {font-size: 1rem;}
+.text12 {font-size: 1.2rem;}
+.text13 {font-size: 1.3rem;}
+.text14 {font-size: 1.4rem;}
+.text15 {font-size: 1.8rem;}
+
+/*mw*/
+.mw100 {max-width: 100%; height: auto;}
+.mw50 {max-width: 50%; height: auto;}
+
+
+/*float*/
+.fright {float: right!important;}
+.fleft {float: left!important;}
+.center {text-align: center!important;}
+.vmiddle {vertical-align: middle!important;}
+.nofloat {float: none!important;}
+
+.nopad {padding:0!important;}
+.nomar {margin:0!important;}
+
+.rel {position: relative!important;}
+.absolute {position: absolute!important;} 
+.bold {font-weight: bold!important;}
+.inlineblock {display:inline-block!important}
+.inline {display:inline!important}
+.fw300 {font-weight: 300!important;}
+
+.imp_block {display: block!important;}
+.imp_none {display: none!important;}
+
+
+/*table-wrapper*/
+.table-wrapper {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+.table-wrapper .tab-row {
+    display: table-row;
+    position: relative;
+}
+.table-wrapper .tab-row .tab-cell {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+/*text*/
+.italic {font-style: italic!important;}
+.normal {font-weight: normal !important;}
+.text_just {text-align: justify;}
+.left {text-align: left!important;}
+.right {text-align: right!important;}
+.upp {text-transform: uppercase;}
+.small {font-size: 14px;}
+.uppercase {text-transform: uppercase} 
+.tt_none {text-transform: none} 
+
+
+/*another*/
+.nodecor {text-decoration: none!important;}
+.notransform {text-transform: none!important;}
+.decor {text-decoration: underline !important;}
+
+.imgbord {border: 1px solid #D3D3D3}
+.noresize {resize: none!important;}/*textarea*/
+.hidden {display: none;}
+.nobr {white-space: nowrap!important;}
+
+#tinymce img {max-width: 100%;}
+
+/*cols*/
+.tab {display: table; width: 100%;}
+.tab_row {display: table-row;}
+.tab_cell {display: table-cell; float: left;}
+.tab.fixed {table-layout: fixed;}
+
+.col {box-sizing: border-box; float: left;}
+.col.w10, .w10p {width: 10%;}
+.col.w15, .w15p {width: 15%;}
+.col.w20, .w20p {width: 20%;}
+.col.w25, .w25p {width: 25%;}
+.col.w30, .w30p {width: 30%;}
+.col.w33, .w33p {width: 33.3%;}
+.col.w40, .w40p {width: 40%;}
+.col.w50, .w50p {width: 50%;}
+.col.w60, .w60p {width: 60%;}
+.col.w70, .w70p {width: 70%;}
+.col.w75, .w75p {width: 75%;}
+.col.w100, .w100p {width: 100%;}
+
+/*air*/
+.air {background: rgba(0, 0, 0, 0) none repeat scroll 0 0;display: block;width: 100%;}
+.air.p1 {height: 1px;}
+.air.p2 {height: 2px;}
+.air.p3 {height: 3px;}
+.air.p4 {height: 4px;}
+.air.p5 {height: 5px;}
+.air.p10 {height: 10px;}
+.air.p15 {height: 15px;}
+.air.p20 {height: 20px;}
+.air.p30 {height: 30px;}
+.air.p40 {height: 40px;}
+.air.p50 {height: 50px;}
+.air.p60 {height: 60px;}
+.air.p70 {height: 70px;}
+.air.p80 {height: 80px;}
+.air.p80 {height: 90px;}
+.air.p100 {height: 100px;}
+
+/*z-index*/
+.z1 {z-index: 1}
+.z2 {z-index: 2}
+.z3 {z-index: 3}
+.z4 {z-index: 5}
+.z5 {z-index: 5}
+.z999 {z-index: 999}
+
+/*height,width*/
+.h50  {height: 50px;}
+.h100 {height: 100px;}
+.h150 {height: 150px;}
+.h200 {height: 200px;}
+.h250 {height: 250px;}
+.h300 {height: 300px;}
+.wi50  {width: 50px;}
+.wi100 {width: 100px;}
+.wi150 {width: 150px;}
+.wi200 {width: 200px;}
+.wi250 {width: 250px;}
+.wi300 {width: 300px;}
+
+
+/*height,width*/
+.h25p  {height: 25%;}
+.h33p  {height: 33.3%;}
+.h50p  {height: 50%;}
+.h100p {height: 100%;}
+.w25p  {width: 50%;}
+.w33p  {width: 33.3%;}
+.w50p  {width: 50%;}
+.w100p {width: 100%;}
+
