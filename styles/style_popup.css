@@ -66,7 +66,7 @@
 .calendar-popup {
   position: absolute;
   right: 0;
-  top: calc(100% + 10px); 
+
   width: 320px; 
   z-index: 1200;
   pointer-events: none; 
@@ -84,7 +84,6 @@
 
 .calendar-card {
   background: #fff;
-  box-shadow: 0 10px 30px rgba(7,27,50,0.12);
   border: 1px solid #d1d5db;
   overflow: hidden;
   font-family: 'Montserrat', Arial, sans-serif;
@@ -234,7 +233,6 @@
   list-style:none;
   background:#fff;
   border: 1px solid #d1d5db;
-  box-shadow:0 6px 18px rgba(16,24,40,0.08);
   max-height:220px;
   overflow-y:auto;
   z-index:50;
@@ -293,6 +291,17 @@
 .comment-textarea {
   min-height: 90px;
   resize: none;
+  background: rgb(255, 255, 255);
+    border: 1px solid rgb(213, 213, 213);
+    box-shadow: none;
+    color: rgb(0, 29, 54);
+    font-size: 1.05rem;
+    outline: none medium;
+    padding: 10px 15px;
+    transition: 100ms cubic-bezier(0.42, 0, 0.58, 1);
+    width: 100%;
+    margin: 5px 0px;
+    font-family: inherit;
 }
 
 .checkbox_style label,
@@ -399,4 +408,72 @@
   .time-open-btn {
     display: inline-block;
   }
+}
+
+.date-picker, .time-picker, .calendar-popup .day, .time-item {
+  touch-action: manipulation;         
+  -webkit-tap-highlight-color: rgba(0,0,0,0.06);
+}
+
+.calendar-popup { z-index: 99999 !important; -webkit-overflow-scrolling: touch; }
+.time-list { z-index: 99999 !important; -webkit-overflow-scrolling: touch; }
+
+.time-list { -webkit-overflow-scrolling: touch; }
+
+.menu_form-descr,
+.callback_input {
+  margin-bottom: 0px;
+}
+
+.menu_form {
+  overflow-y: auto;
+}
+
+@media (max-width: 1200px) {
+  .menu_form {
+    overflow-y: unset;
+  }
+}
+
+.iblock_add_main_form_2 .popup-data-calandar-title {
+  text-align: left;
+}
+
+.iblock_add_main_form_2 .time-picker {
+  margin-top: 0px;
+}
+
+.checkoxs-on-main-page {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.main_form {
+  padding: 40px 64px;
+}
+
+@media (max-width: 1900px) {
+  .main_form-img--wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 768px) {
+  .main_form {
+    padding: 60px 16px;
+  }
+}
+
+
+.main_form_3_container {
+  display: flex;
+  align-items: flex-end;
+}
+
+.main-form-3-right-side {
+  padding-bottom: 40px;
+  padding-right: 40px;
 }

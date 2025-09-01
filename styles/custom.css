@@ -1730,7 +1730,7 @@ img.not_mob_pic {
 }
 
 /* Medium Devices, Desktops */
-@media only screen and (max-width : 991px) {
+@media only screen and (max-width : 1230px) {
 .slider .slider_content ul {
     margin: 0 !important;
     display: inline-block;

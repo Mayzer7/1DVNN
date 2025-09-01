@@ -257,12 +257,104 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			<p class="callback-title">Ваше имя</p>
 			<input type="text" class="callback_input" name="m_name">
 			<p class="callback-title">Ваш номер телефона</p>
+			
 			<input type="text" class="callback_input phone_inp" name="m_phone">
 							<div class="hidden">
 																<input type="text" class="page_url" name="page_url" value="https://omni.1dvnn.ru/">
 							</div>				
 			<!--<p class="form_policy">Отправляя данные, вы соглашаетесь с <a href="/politika-konfidentsialnosti/" class="form_policy-link">«Политикой конфиденциальности»</a></p>-->
 			
+
+			
+			<div class="popup-data-inputs">
+							<div class="popup-data-calandar">
+								<p class="popup-data-calandar-title">
+									Выберите желаемое время звонка
+								</p>
+
+								<button type="button" class="date-picker" id="datePicker">
+									<div class="data-picker-left-side">
+										<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M7.2223 9.99996H5.83341C5.06744 9.99996 4.44453 10.6229 4.44453 11.3888V12.7777C4.44453 13.5437 5.06744 14.1666 5.83341 14.1666H7.2223C7.98828 14.1666 8.61119 13.5437 8.61119 12.7777V11.3888C8.61119 10.6229 7.98828 9.99996 7.2223 9.99996ZM5.83341 12.7777V11.3888H7.2223V12.7777H5.83341ZM14.8612 3.05551H14.1667V2.36107C14.1667 1.97774 13.8563 1.66663 13.4723 1.66663C13.0883 1.66663 12.7779 1.97774 12.7779 2.36107V3.05551H7.2223V2.36107C7.2223 1.97774 6.91189 1.66663 6.52786 1.66663C6.14383 1.66663 5.83341 1.97774 5.83341 2.36107V3.05551H5.13897C3.22439 3.05551 1.66675 4.61315 1.66675 6.52774V14.8611C1.66675 16.7757 3.22439 18.3333 5.13897 18.3333H14.8612C16.7758 18.3333 18.3334 16.7757 18.3334 14.8611V6.52774C18.3334 4.61315 16.7758 3.05551 14.8612 3.05551ZM5.13897 4.4444H14.8612C16.0098 4.4444 16.9445 5.37913 16.9445 6.52774V7.22218H3.05564V6.52774C3.05564 5.37913 3.99036 4.4444 5.13897 4.4444ZM14.8612 16.9444H5.13897C3.99036 16.9444 3.05564 16.0097 3.05564 14.8611V8.61107H16.9445V14.8611C16.9445 16.0097 16.0098 16.9444 14.8612 16.9444Z" fill="#D9D9D9"/>
+										</svg>
+
+										<p class="data-picker-text">
+											5 августа 2025
+										</p>
+									</div>
+									
+									<div class="data-picker-right-side">
+										<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M3 6L8 11L13 6" stroke="#282828" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+										</svg>
+									</div>
+								</button>
+
+								<!-- Календарь -->
+								<div class="calendar-popup" id="calendarPopup" role="dialog" aria-modal="false" aria-hidden="true">
+									<div class="calendar-card">
+									<div class="calendar-header">
+										<div class="calendar-header-left">
+											<div class="calendar-title"></div>
+										</div>
+
+										<div class="calendar-header-right">
+											<button class="cal-prev" aria-label="Предыдущий месяц">
+												<svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M6.5 11.5L1.5 6.50001L6.5 1.5" stroke="#282828" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+												</svg>
+											</button>
+
+											<button class="cal-next" aria-label="Следующий месяц">
+												<svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M1.5 11.5L6.5 6.50001L1.5 1.5" stroke="#282828" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+												</svg>
+											</button>
+										</div>
+									</div>
+
+									<div class="calendar-weekdays">
+										<div>Пн</div><div>Вт</div><div>Ср</div><div>Чт</div><div>Пт</div><div>Сб</div><div>Вс</div>
+									</div>
+
+									<div class="calendar-grid"></div>
+									</div>
+								</div>
+							</div>
+
+							<div class="time-picker-wrapper">
+								<button type="button" class="time-picker" id="timePicker" aria-haspopup="listbox" aria-expanded="false" tabindex="0">
+									<div class="time-picker-left-side">
+									<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M10.0001 18.3334C5.40494 18.3334 1.66675 14.5952 1.66675 10.0001C1.66675 5.40494 5.40494 1.66675 10.0001 1.66675C14.5952 1.66675 18.3334 5.40494 18.3334 10.0001C18.3334 14.5952 14.5952 18.3334 10.0001 18.3334ZM10.0001 3.05564C6.17091 3.05564 3.05564 6.17091 3.05564 10.0001C3.05564 13.8292 6.17091 16.9445 10.0001 16.9445C13.8292 16.9445 16.9445 13.8292 16.9445 10.0001C16.9445 6.17091 13.8292 3.05564 10.0001 3.05564ZM13.4723 10.0001C13.4723 9.8159 13.3991 9.63927 13.2689 9.50903C13.1387 9.3788 12.962 9.30564 12.7779 9.30564H10.6945V5.83341C10.6945 5.64924 10.6214 5.4726 10.4911 5.34237C10.3609 5.21213 10.1843 5.13897 10.0001 5.13897C9.8159 5.13897 9.63927 5.21213 9.50903 5.34237C9.3788 5.4726 9.30564 5.64924 9.30564 5.83341V10.0001C9.30564 10.1843 9.3788 10.3609 9.50903 10.4911C9.63927 10.6214 9.8159 10.6945 10.0001 10.6945H12.7779C12.962 10.6945 13.1387 10.6214 13.2689 10.4911C13.3991 10.3609 13.4723 10.1843 13.4723 10.0001Z" fill="#D9D9D9"/>
+									</svg>
+
+									<p class="time-picker-text" id="timePickerText">10:00–11:00</p>
+									</div>
+
+									<div class="time-picker-right-side">
+									<svg class="chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M3 6L8 11L13 6" stroke="#282828" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+									</svg>
+									</div>
+								</button>
+
+								<ul class="time-list" id="timeList" role="listbox" aria-labelledby="timePicker">
+									<li class="time-item" data-value="09:00–10:00" role="option">09:00–10:00</li>
+
+									<li class="time-item" data-value="12:00–13:00" role="option">12:00–13:00</li>
+
+										
+									<li class="time-item" data-value="14:00–15:00" role="option">14:00–15:00</li>
+
+									<li class="time-item" data-value="16:00–17:00" role="option">16:00–17:00</li>
+								</ul>
+							</div>
+
+							<textarea name="comment" placeholder="Комментарий" id="" class="comment-textarea"></textarea>
+			</div>
+		
+
 			<div class="licence_block styled_switch checkbox_style">
 				<input id="licenses_popup_CALLBACK_nh" name="licenses_popup" required="" value="Y" aria-required="true" type="checkbox" checked="checked">
 				<label for="licenses_popup_CALLBACK_nh">Я ознакомлен и принимаю условия <a href="/politika-konfidentsialnosti/"> политики в отношении обработки персональных данных</a></label>
@@ -424,6 +516,94 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				<input type="text" class="callback_input phone_inp" name="m_phone2">
 				<!--<p class="form_policy">Отправляя данные, вы соглашаетесь с <a href="/politika-konfidentsialnosti/" class="form_policy-link">«Политикой конфиденциальности»</a></p>-->
 				
+
+			<div class="popup-data-inputs">
+							<div class="popup-data-calandar">
+								<p class="popup-data-calandar-title">
+									Выберите желаемое время звонка
+								</p>
+
+								<button type="button" class="date-picker" id="datePicker">
+									<div class="data-picker-left-side">
+										<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M7.2223 9.99996H5.83341C5.06744 9.99996 4.44453 10.6229 4.44453 11.3888V12.7777C4.44453 13.5437 5.06744 14.1666 5.83341 14.1666H7.2223C7.98828 14.1666 8.61119 13.5437 8.61119 12.7777V11.3888C8.61119 10.6229 7.98828 9.99996 7.2223 9.99996ZM5.83341 12.7777V11.3888H7.2223V12.7777H5.83341ZM14.8612 3.05551H14.1667V2.36107C14.1667 1.97774 13.8563 1.66663 13.4723 1.66663C13.0883 1.66663 12.7779 1.97774 12.7779 2.36107V3.05551H7.2223V2.36107C7.2223 1.97774 6.91189 1.66663 6.52786 1.66663C6.14383 1.66663 5.83341 1.97774 5.83341 2.36107V3.05551H5.13897C3.22439 3.05551 1.66675 4.61315 1.66675 6.52774V14.8611C1.66675 16.7757 3.22439 18.3333 5.13897 18.3333H14.8612C16.7758 18.3333 18.3334 16.7757 18.3334 14.8611V6.52774C18.3334 4.61315 16.7758 3.05551 14.8612 3.05551ZM5.13897 4.4444H14.8612C16.0098 4.4444 16.9445 5.37913 16.9445 6.52774V7.22218H3.05564V6.52774C3.05564 5.37913 3.99036 4.4444 5.13897 4.4444ZM14.8612 16.9444H5.13897C3.99036 16.9444 3.05564 16.0097 3.05564 14.8611V8.61107H16.9445V14.8611C16.9445 16.0097 16.0098 16.9444 14.8612 16.9444Z" fill="#D9D9D9"/>
+										</svg>
+
+										<p class="data-picker-text">
+											5 августа 2025
+										</p>
+									</div>
+									
+									<div class="data-picker-right-side">
+										<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M3 6L8 11L13 6" stroke="#282828" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+										</svg>
+									</div>
+								</button>
+
+								<!-- Календарь -->
+								<div class="calendar-popup" id="calendarPopup" role="dialog" aria-modal="false" aria-hidden="true">
+									<div class="calendar-card">
+									<div class="calendar-header">
+										<div class="calendar-header-left">
+											<div class="calendar-title"></div>
+										</div>
+
+										<div class="calendar-header-right">
+											<button class="cal-prev" aria-label="Предыдущий месяц">
+												<svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M6.5 11.5L1.5 6.50001L6.5 1.5" stroke="#282828" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+												</svg>
+											</button>
+
+											<button class="cal-next" aria-label="Следующий месяц">
+												<svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M1.5 11.5L6.5 6.50001L1.5 1.5" stroke="#282828" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+												</svg>
+											</button>
+										</div>
+									</div>
+
+									<div class="calendar-weekdays">
+										<div>Пн</div><div>Вт</div><div>Ср</div><div>Чт</div><div>Пт</div><div>Сб</div><div>Вс</div>
+									</div>
+
+									<div class="calendar-grid"></div>
+									</div>
+								</div>
+							</div>
+
+							<div class="time-picker-wrapper">
+								<button type="button" class="time-picker" id="timePicker" aria-haspopup="listbox" aria-expanded="false" tabindex="0">
+									<div class="time-picker-left-side">
+									<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M10.0001 18.3334C5.40494 18.3334 1.66675 14.5952 1.66675 10.0001C1.66675 5.40494 5.40494 1.66675 10.0001 1.66675C14.5952 1.66675 18.3334 5.40494 18.3334 10.0001C18.3334 14.5952 14.5952 18.3334 10.0001 18.3334ZM10.0001 3.05564C6.17091 3.05564 3.05564 6.17091 3.05564 10.0001C3.05564 13.8292 6.17091 16.9445 10.0001 16.9445C13.8292 16.9445 16.9445 13.8292 16.9445 10.0001C16.9445 6.17091 13.8292 3.05564 10.0001 3.05564ZM13.4723 10.0001C13.4723 9.8159 13.3991 9.63927 13.2689 9.50903C13.1387 9.3788 12.962 9.30564 12.7779 9.30564H10.6945V5.83341C10.6945 5.64924 10.6214 5.4726 10.4911 5.34237C10.3609 5.21213 10.1843 5.13897 10.0001 5.13897C9.8159 5.13897 9.63927 5.21213 9.50903 5.34237C9.3788 5.4726 9.30564 5.64924 9.30564 5.83341V10.0001C9.30564 10.1843 9.3788 10.3609 9.50903 10.4911C9.63927 10.6214 9.8159 10.6945 10.0001 10.6945H12.7779C12.962 10.6945 13.1387 10.6214 13.2689 10.4911C13.3991 10.3609 13.4723 10.1843 13.4723 10.0001Z" fill="#D9D9D9"/>
+									</svg>
+
+									<p class="time-picker-text" id="timePickerText">10:00–11:00</p>
+									</div>
+
+									<div class="time-picker-right-side">
+									<svg class="chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M3 6L8 11L13 6" stroke="#282828" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+									</svg>
+									</div>
+								</button>
+
+								<ul class="time-list" id="timeList" role="listbox" aria-labelledby="timePicker">
+									<li class="time-item" data-value="09:00–10:00" role="option">09:00–10:00</li>
+
+									<li class="time-item" data-value="12:00–13:00" role="option">12:00–13:00</li>
+
+										
+									<li class="time-item" data-value="14:00–15:00" role="option">14:00–15:00</li>
+
+									<li class="time-item" data-value="16:00–17:00" role="option">16:00–17:00</li>
+								</ul>
+							</div>
+
+							<textarea name="comment" placeholder="Комментарий" id="" class="comment-textarea"></textarea>
+			</div>
 				
 			<div class="licence_block styled_switch checkbox_style">
 				<input id="licenses_popup_CALLBACK_nh" name="licenses_popup" required="" value="Y" aria-required="true" type="checkbox" checked="checked">
@@ -1802,28 +1982,128 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 						<div class="form_field ff2">
 												<div class="mb_pods">Номер телефона</div>
 							<input required="" placeholder="+7 (999) 999-9999 *" data-code="PHONE" type="text" name="phone_v" size="30" value=""><br>			</div>
-								
+
+							<div class="popup-data-inputs">
+								<p class="popup-data-calandar-title">
+									Выберите желаемое время звонка
+								</p>
+								<div class="form_field">
+									
+										<div class="popup-data-calandar">
+
+								<button type="button" class="date-picker" id="datePicker">
+									<div class="data-picker-left-side">
+										<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M7.2223 9.99996H5.83341C5.06744 9.99996 4.44453 10.6229 4.44453 11.3888V12.7777C4.44453 13.5437 5.06744 14.1666 5.83341 14.1666H7.2223C7.98828 14.1666 8.61119 13.5437 8.61119 12.7777V11.3888C8.61119 10.6229 7.98828 9.99996 7.2223 9.99996ZM5.83341 12.7777V11.3888H7.2223V12.7777H5.83341ZM14.8612 3.05551H14.1667V2.36107C14.1667 1.97774 13.8563 1.66663 13.4723 1.66663C13.0883 1.66663 12.7779 1.97774 12.7779 2.36107V3.05551H7.2223V2.36107C7.2223 1.97774 6.91189 1.66663 6.52786 1.66663C6.14383 1.66663 5.83341 1.97774 5.83341 2.36107V3.05551H5.13897C3.22439 3.05551 1.66675 4.61315 1.66675 6.52774V14.8611C1.66675 16.7757 3.22439 18.3333 5.13897 18.3333H14.8612C16.7758 18.3333 18.3334 16.7757 18.3334 14.8611V6.52774C18.3334 4.61315 16.7758 3.05551 14.8612 3.05551ZM5.13897 4.4444H14.8612C16.0098 4.4444 16.9445 5.37913 16.9445 6.52774V7.22218H3.05564V6.52774C3.05564 5.37913 3.99036 4.4444 5.13897 4.4444ZM14.8612 16.9444H5.13897C3.99036 16.9444 3.05564 16.0097 3.05564 14.8611V8.61107H16.9445V14.8611C16.9445 16.0097 16.0098 16.9444 14.8612 16.9444Z" fill="#D9D9D9"/>
+										</svg>
+
+										<p class="data-picker-text">
+											5 августа 2025
+										</p>
+									</div>
+									
+									<div class="data-picker-right-side">
+										<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M3 6L8 11L13 6" stroke="#282828" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+										</svg>
+									</div>
+								</button>
+
+								<!-- Календарь -->
+								<div class="calendar-popup" id="calendarPopup" role="dialog" aria-modal="false" aria-hidden="true">
+									<div class="calendar-card">
+									<div class="calendar-header">
+										<div class="calendar-header-left">
+											<div class="calendar-title"></div>
+										</div>
+
+										<div class="calendar-header-right">
+											<button class="cal-prev" aria-label="Предыдущий месяц">
+												<svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M6.5 11.5L1.5 6.50001L6.5 1.5" stroke="#282828" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+												</svg>
+											</button>
+
+											<button class="cal-next" aria-label="Следующий месяц">
+												<svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M1.5 11.5L6.5 6.50001L1.5 1.5" stroke="#282828" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+												</svg>
+											</button>
+										</div>
+									</div>
+
+									<div class="calendar-weekdays">
+										<div>Пн</div><div>Вт</div><div>Ср</div><div>Чт</div><div>Пт</div><div>Сб</div><div>Вс</div>
+									</div>
+
+									<div class="calendar-grid"></div>
+									</div>
+								</div>
+							</div>	
+									</div>
+							</div>
+									
+						<div class="form_field ff2">
+							<div class="popup-data-inputs">
+								<div class="time-picker-wrapper">
+									<button type="button" class="time-picker" id="timePicker" aria-haspopup="listbox" aria-expanded="false" tabindex="0">
+										<div class="time-picker-left-side">
+										<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M10.0001 18.3334C5.40494 18.3334 1.66675 14.5952 1.66675 10.0001C1.66675 5.40494 5.40494 1.66675 10.0001 1.66675C14.5952 1.66675 18.3334 5.40494 18.3334 10.0001C18.3334 14.5952 14.5952 18.3334 10.0001 18.3334ZM10.0001 3.05564C6.17091 3.05564 3.05564 6.17091 3.05564 10.0001C3.05564 13.8292 6.17091 16.9445 10.0001 16.9445C13.8292 16.9445 16.9445 13.8292 16.9445 10.0001C16.9445 6.17091 13.8292 3.05564 10.0001 3.05564ZM13.4723 10.0001C13.4723 9.8159 13.3991 9.63927 13.2689 9.50903C13.1387 9.3788 12.962 9.30564 12.7779 9.30564H10.6945V5.83341C10.6945 5.64924 10.6214 5.4726 10.4911 5.34237C10.3609 5.21213 10.1843 5.13897 10.0001 5.13897C9.8159 5.13897 9.63927 5.21213 9.50903 5.34237C9.3788 5.4726 9.30564 5.64924 9.30564 5.83341V10.0001C9.30564 10.1843 9.3788 10.3609 9.50903 10.4911C9.63927 10.6214 9.8159 10.6945 10.0001 10.6945H12.7779C12.962 10.6945 13.1387 10.6214 13.2689 10.4911C13.3991 10.3609 13.4723 10.1843 13.4723 10.0001Z" fill="#D9D9D9"/>
+										</svg>
+
+										<p class="time-picker-text" id="timePickerText">10:00–11:00</p>
+										</div>
+
+										<div class="time-picker-right-side">
+										<svg class="chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M3 6L8 11L13 6" stroke="#282828" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+										</svg>
+										</div>
+									</button>
+
+									<ul class="time-list" id="timeList" role="listbox" aria-labelledby="timePicker">
+										<li class="time-item" data-value="09:00–10:00" role="option">09:00–10:00</li>
+
+										<li class="time-item" data-value="12:00–13:00" role="option">12:00–13:00</li>
+
+											
+										<li class="time-item" data-value="14:00–15:00" role="option">14:00–15:00</li>
+
+										<li class="time-item" data-value="16:00–17:00" role="option">16:00–17:00</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<textarea name="comment" placeholder="Комментарий" id="" class="comment-textarea"></textarea>
+						
+						<div class="checkoxs-on-main-page">
+							<div class="licence_block styled_switch checkbox_style">
+								<input id="rek_r" name="checkboxpromo" aria-required="true" type="checkbox" checked="checked">
+								<label for="rek_r"><a href="/soglasie-na-poluchenie-reklamnykh-rassylok/" target="_blank">Согласие на получение рекламно-информационных материалов</a></label>
+							</div>	
+							
+							<div class="licence_block styled_switch checkbox_style">
+								<input id="licenses_popup_CALLBACK_n1" name="licenses_popup_n2" required="" value="Y" aria-required="true" type="checkbox" checked="checked">
+								<label for="licenses_popup_CALLBACK_n1">Я ознакомлен и принимаю условия <a href="/politika-konfidentsialnosti/"> политики в отношении обработки персональных данных</a></label>
+							</div>			
+
+							<div class="licence_block styled_switch checkbox_style">
+								<input id="licenses_popup_CALLBACK" name="licenses_popup" required="" value="Y" aria-required="true" type="checkbox" checked="checked">
+								<label for="licenses_popup_CALLBACK">Я согласен на <a href="/soglasie-na-obrabotku-personalnykh-dannykh/">обработку своих персональных данных</a></label>
+							</div>
+						</div>
+							
 				<div class="flex_form flex-column">		
 					<div class="clear"></div>
+					<div class="hidden">
+						<input type="text" class="page_url" name="page_url" value="https://omni.1dvnn.ru/">
+					</div>	
 
-							<div class="hidden">
-																<input type="text" class="page_url" name="page_url" value="https://omni.1dvnn.ru/">
-							</div>	
+					
 
-			<div class="licence_block styled_switch checkbox_style">
-				<input id="rek_r" name="checkboxpromo" aria-required="true" type="checkbox" checked="checked">
-				<label for="rek_r"><a href="/soglasie-na-poluchenie-reklamnykh-rassylok/" target="_blank">Согласие на получение рекламно-информационных материалов</a></label>
-			</div>	
 			
-			<div class="licence_block styled_switch checkbox_style">
-				<input id="licenses_popup_CALLBACK_n1" name="licenses_popup_n2" required="" value="Y" aria-required="true" type="checkbox" checked="checked">
-				<label for="licenses_popup_CALLBACK_n1">Я ознакомлен и принимаю условия <a href="/politika-konfidentsialnosti/"> политики в отношении обработки персональных данных</a></label>
-			</div>			
-
-			<div class="licence_block styled_switch checkbox_style">
-				<input id="licenses_popup_CALLBACK" name="licenses_popup" required="" value="Y" aria-required="true" type="checkbox" checked="checked">
-				<label for="licenses_popup_CALLBACK">Я согласен на <a href="/soglasie-na-obrabotku-personalnykh-dannykh/">обработку своих персональных данных</a></label>
-			</div>
 			
 		
 		
@@ -1832,10 +2112,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			</div>	
 			<div class="clear"></div>
 				
-		<div class="clear"></div>
-		
 
-		
+			
 		<div class="air p10"></div>
 		
 			
@@ -1845,6 +2123,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		
 		
 		</div>
+		<div class="clear"></div>
+		
 	
 </div>
 </div>	
@@ -2257,8 +2537,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 <div class="air p30"></div>
 <div class="bg_block1">
-<div class="content_container nonpadding form_hod form_cust">
-		 <div class="main_form_container d-flex">
+<div class="main_form_container main_form_3_container d-flex form_cust">
 <div class="main_form">
 
 <h2 class="styled">Остались вопросы?</h2>
@@ -2266,63 +2545,170 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="air p50"></div>	
 
 	
-<form class="iblock_add_main_form_3" method="post">
+<form class="iblock_add_main_form_2 form_3" method="post">
 <div class="d-flex">
 <div class="form col-12 pr-0 pl-0">
-						
-
+	<input type="hidden" name="sessid" id="sessid" value="a90a182f2c430602347d8c63d4958920">						
+							
 							
 						<div class="form_field">
-												<div class="mb_pods">Ваше имя</div>
-														<input required="" placeholder="Ваше имя *" data-code="" type="text" name="name_v2" size="30" value=""><br>			</div>
+										<div class="mb_pods">Ваше имя</div>		
+							<input required="" placeholder="Ваше имя *" data-code="" type="text" name="name_v" size="30" value=""><br>			</div>
 						<div class="form_field ff2">
 												<div class="mb_pods">Номер телефона</div>
-														<input required="" placeholder="+7 (999) 999-9999 *" data-code="PHONE" type="text" name="phone_v2" size="30" value=""><br>			</div>
-								
+							<input required="" placeholder="+7 (999) 999-9999 *" data-code="PHONE" type="text" name="phone_v" size="30" value=""><br>			</div>
+
+							<div class="popup-data-inputs">
+								<p class="popup-data-calandar-title">
+									Выберите желаемое время звонка
+								</p>
+								<div class="form_field">
+									
+										<div class="popup-data-calandar">
+
+								<button type="button" class="date-picker" id="datePicker">
+									<div class="data-picker-left-side">
+										<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M7.2223 9.99996H5.83341C5.06744 9.99996 4.44453 10.6229 4.44453 11.3888V12.7777C4.44453 13.5437 5.06744 14.1666 5.83341 14.1666H7.2223C7.98828 14.1666 8.61119 13.5437 8.61119 12.7777V11.3888C8.61119 10.6229 7.98828 9.99996 7.2223 9.99996ZM5.83341 12.7777V11.3888H7.2223V12.7777H5.83341ZM14.8612 3.05551H14.1667V2.36107C14.1667 1.97774 13.8563 1.66663 13.4723 1.66663C13.0883 1.66663 12.7779 1.97774 12.7779 2.36107V3.05551H7.2223V2.36107C7.2223 1.97774 6.91189 1.66663 6.52786 1.66663C6.14383 1.66663 5.83341 1.97774 5.83341 2.36107V3.05551H5.13897C3.22439 3.05551 1.66675 4.61315 1.66675 6.52774V14.8611C1.66675 16.7757 3.22439 18.3333 5.13897 18.3333H14.8612C16.7758 18.3333 18.3334 16.7757 18.3334 14.8611V6.52774C18.3334 4.61315 16.7758 3.05551 14.8612 3.05551ZM5.13897 4.4444H14.8612C16.0098 4.4444 16.9445 5.37913 16.9445 6.52774V7.22218H3.05564V6.52774C3.05564 5.37913 3.99036 4.4444 5.13897 4.4444ZM14.8612 16.9444H5.13897C3.99036 16.9444 3.05564 16.0097 3.05564 14.8611V8.61107H16.9445V14.8611C16.9445 16.0097 16.0098 16.9444 14.8612 16.9444Z" fill="#D9D9D9"/>
+										</svg>
+
+										<p class="data-picker-text">
+											5 августа 2025
+										</p>
+									</div>
+									
+									<div class="data-picker-right-side">
+										<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M3 6L8 11L13 6" stroke="#282828" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+										</svg>
+									</div>
+								</button>
+
+								<!-- Календарь -->
+								<div class="calendar-popup" id="calendarPopup" role="dialog" aria-modal="false" aria-hidden="true">
+									<div class="calendar-card">
+									<div class="calendar-header">
+										<div class="calendar-header-left">
+											<div class="calendar-title"></div>
+										</div>
+
+										<div class="calendar-header-right">
+											<button class="cal-prev" aria-label="Предыдущий месяц">
+												<svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M6.5 11.5L1.5 6.50001L6.5 1.5" stroke="#282828" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+												</svg>
+											</button>
+
+											<button class="cal-next" aria-label="Следующий месяц">
+												<svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M1.5 11.5L6.5 6.50001L1.5 1.5" stroke="#282828" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+												</svg>
+											</button>
+										</div>
+									</div>
+
+									<div class="calendar-weekdays">
+										<div>Пн</div><div>Вт</div><div>Ср</div><div>Чт</div><div>Пт</div><div>Сб</div><div>Вс</div>
+									</div>
+
+									<div class="calendar-grid"></div>
+									</div>
+								</div>
+							</div>	
+									</div>
+							</div>
+									
+						<div class="form_field ff2">
+							<div class="popup-data-inputs">
+								<div class="time-picker-wrapper">
+									<button type="button" class="time-picker" id="timePicker" aria-haspopup="listbox" aria-expanded="false" tabindex="0">
+										<div class="time-picker-left-side">
+										<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M10.0001 18.3334C5.40494 18.3334 1.66675 14.5952 1.66675 10.0001C1.66675 5.40494 5.40494 1.66675 10.0001 1.66675C14.5952 1.66675 18.3334 5.40494 18.3334 10.0001C18.3334 14.5952 14.5952 18.3334 10.0001 18.3334ZM10.0001 3.05564C6.17091 3.05564 3.05564 6.17091 3.05564 10.0001C3.05564 13.8292 6.17091 16.9445 10.0001 16.9445C13.8292 16.9445 16.9445 13.8292 16.9445 10.0001C16.9445 6.17091 13.8292 3.05564 10.0001 3.05564ZM13.4723 10.0001C13.4723 9.8159 13.3991 9.63927 13.2689 9.50903C13.1387 9.3788 12.962 9.30564 12.7779 9.30564H10.6945V5.83341C10.6945 5.64924 10.6214 5.4726 10.4911 5.34237C10.3609 5.21213 10.1843 5.13897 10.0001 5.13897C9.8159 5.13897 9.63927 5.21213 9.50903 5.34237C9.3788 5.4726 9.30564 5.64924 9.30564 5.83341V10.0001C9.30564 10.1843 9.3788 10.3609 9.50903 10.4911C9.63927 10.6214 9.8159 10.6945 10.0001 10.6945H12.7779C12.962 10.6945 13.1387 10.6214 13.2689 10.4911C13.3991 10.3609 13.4723 10.1843 13.4723 10.0001Z" fill="#D9D9D9"/>
+										</svg>
+
+										<p class="time-picker-text" id="timePickerText">10:00–11:00</p>
+										</div>
+
+										<div class="time-picker-right-side">
+										<svg class="chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M3 6L8 11L13 6" stroke="#282828" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+										</svg>
+										</div>
+									</button>
+
+									<ul class="time-list" id="timeList" role="listbox" aria-labelledby="timePicker">
+										<li class="time-item" data-value="09:00–10:00" role="option">09:00–10:00</li>
+
+										<li class="time-item" data-value="12:00–13:00" role="option">12:00–13:00</li>
+
+											
+										<li class="time-item" data-value="14:00–15:00" role="option">14:00–15:00</li>
+
+										<li class="time-item" data-value="16:00–17:00" role="option">16:00–17:00</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<textarea name="comment" placeholder="Комментарий" id="" class="comment-textarea"></textarea>
+						
+						
+		
+	
+</div>
+</div>	
+</form>
+</div>
+	<div class="main-form-3-right-side">
+		<div class="checkoxs-on-main-page">
+							<div class="licence_block styled_switch checkbox_style">
+								<input id="rek_r" name="checkboxpromo" aria-required="true" type="checkbox" checked="checked">
+								<label for="rek_r"><a href="/soglasie-na-poluchenie-reklamnykh-rassylok/" target="_blank">Согласие на получение рекламно-информационных материалов</a></label>
+							</div>	
+							
+							<div class="licence_block styled_switch checkbox_style">
+								<input id="licenses_popup_CALLBACK_n1" name="licenses_popup_n2" required="" value="Y" aria-required="true" type="checkbox" checked="checked">
+								<label for="licenses_popup_CALLBACK_n1">Я ознакомлен и принимаю условия <a href="/politika-konfidentsialnosti/"> политики в отношении обработки персональных данных</a></label>
+							</div>			
+
+							<div class="licence_block styled_switch checkbox_style">
+								<input id="licenses_popup_CALLBACK" name="licenses_popup" required="" value="Y" aria-required="true" type="checkbox" checked="checked">
+								<label for="licenses_popup_CALLBACK">Я согласен на <a href="/soglasie-na-obrabotku-personalnykh-dannykh/">обработку своих персональных данных</a></label>
+							</div>
+						</div>
+							
 				<div class="flex_form flex-column">		
 					<div class="clear"></div>
-							<div class="hidden">
-																<input type="text" class="page_url" name="page_url3" value="https://omni.1dvnn.ru/">
-							</div>	
-			<div class="licence_block styled_switch checkbox_style">
-				<input id="rek_r2" name="checkboxpromo" aria-required="true" type="checkbox" checked="checked">
-				<label for="rek_r2"><a href="/soglasie-na-poluchenie-reklamnykh-rassylok/" target="_blank">Согласие на получение рекламно-информационных материалов</a></label>
-			</div>	
-			
-			
-			<div class="licence_block styled_switch checkbox_style">
-				<input id="licenses_popup_CALLBACK2_n1" name="licenses_popup" required="" value="Y" aria-required="true" type="checkbox" checked="checked">
-				<label for="licenses_popup_CALLBACK2_n1">Я ознакомлен и принимаю условия <a href="/politika-konfidentsialnosti/"> политики в отношении обработки персональных данных</a></label>
-			</div>			
+					<div class="hidden">
+						<input type="text" class="page_url" name="page_url" value="https://omni.1dvnn.ru/">
+					</div>	
 
-			<div class="licence_block styled_switch checkbox_style">
-				<input id="licenses_popup_CALLBACK2" name="licenses_popup" required="" value="Y" aria-required="true" type="checkbox" checked="checked">
-				<label for="licenses_popup_CALLBACK2">Я согласен на <a href="/soglasie-na-obrabotku-personalnykh-dannykh/">обработку своих персональных данных</a></label>
-			</div>
+					
+
+			
+			
 		
-			
-			
+		
+			<div class="licence_block styled_switch checkbox_style  hidden">
+				Отправляя данные, вы соглашаетесь с <a href="/politika-konfidentsialnosti/" target="_blank">«Политикой конфиденциальности»</a>
+			</div>	
 			<div class="clear"></div>
 				
-		<div class="clear"></div>
+
+			
 		<div class="air p10"></div>
 		
 			
 				
 					<input type="submit" class="btn thiss l-form_btn" name="iblock_submitmain_form" value="Отправить">
 									
-			
+		
 		
 		</div>
-	
-</div>
-</div>	
-</form>
-</div>
-	<div class="main_form-img--wrapper">
-		<img src="pics/form-img.jpg" alt="">
+		<div class="clear"></div>
 	</div>
-</div></div><a name="progress"></a>
+</div><a name="progress"></a>
 <div class="content_container">
 <div class="hidden">
 Array
@@ -3147,7 +3533,7 @@ else
 									Выберите желаемое время звонка
 								</p>
 
-								<button class="date-picker" id="datePicker">
+								<button type="button" class="date-picker" id="datePicker">
 									<div class="data-picker-left-side">
 										<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<path d="M7.2223 9.99996H5.83341C5.06744 9.99996 4.44453 10.6229 4.44453 11.3888V12.7777C4.44453 13.5437 5.06744 14.1666 5.83341 14.1666H7.2223C7.98828 14.1666 8.61119 13.5437 8.61119 12.7777V11.3888C8.61119 10.6229 7.98828 9.99996 7.2223 9.99996ZM5.83341 12.7777V11.3888H7.2223V12.7777H5.83341ZM14.8612 3.05551H14.1667V2.36107C14.1667 1.97774 13.8563 1.66663 13.4723 1.66663C13.0883 1.66663 12.7779 1.97774 12.7779 2.36107V3.05551H7.2223V2.36107C7.2223 1.97774 6.91189 1.66663 6.52786 1.66663C6.14383 1.66663 5.83341 1.97774 5.83341 2.36107V3.05551H5.13897C3.22439 3.05551 1.66675 4.61315 1.66675 6.52774V14.8611C1.66675 16.7757 3.22439 18.3333 5.13897 18.3333H14.8612C16.7758 18.3333 18.3334 16.7757 18.3334 14.8611V6.52774C18.3334 4.61315 16.7758 3.05551 14.8612 3.05551ZM5.13897 4.4444H14.8612C16.0098 4.4444 16.9445 5.37913 16.9445 6.52774V7.22218H3.05564V6.52774C3.05564 5.37913 3.99036 4.4444 5.13897 4.4444ZM14.8612 16.9444H5.13897C3.99036 16.9444 3.05564 16.0097 3.05564 14.8611V8.61107H16.9445V14.8611C16.9445 16.0097 16.0098 16.9444 14.8612 16.9444Z" fill="#D9D9D9"/>
@@ -3198,7 +3584,7 @@ else
 							</div>
 
 							<div class="time-picker-wrapper">
-								<button class="time-picker" id="timePicker" aria-haspopup="listbox" aria-expanded="false" tabindex="0">
+								<button type="button" class="time-picker" id="timePicker" aria-haspopup="listbox" aria-expanded="false" tabindex="0">
 									<div class="time-picker-left-side">
 									<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<path d="M10.0001 18.3334C5.40494 18.3334 1.66675 14.5952 1.66675 10.0001C1.66675 5.40494 5.40494 1.66675 10.0001 1.66675C14.5952 1.66675 18.3334 5.40494 18.3334 10.0001C18.3334 14.5952 14.5952 18.3334 10.0001 18.3334ZM10.0001 3.05564C6.17091 3.05564 3.05564 6.17091 3.05564 10.0001C3.05564 13.8292 6.17091 16.9445 10.0001 16.9445C13.8292 16.9445 16.9445 13.8292 16.9445 10.0001C16.9445 6.17091 13.8292 3.05564 10.0001 3.05564ZM13.4723 10.0001C13.4723 9.8159 13.3991 9.63927 13.2689 9.50903C13.1387 9.3788 12.962 9.30564 12.7779 9.30564H10.6945V5.83341C10.6945 5.64924 10.6214 5.4726 10.4911 5.34237C10.3609 5.21213 10.1843 5.13897 10.0001 5.13897C9.8159 5.13897 9.63927 5.21213 9.50903 5.34237C9.3788 5.4726 9.30564 5.64924 9.30564 5.83341V10.0001C9.30564 10.1843 9.3788 10.3609 9.50903 10.4911C9.63927 10.6214 9.8159 10.6945 10.0001 10.6945H12.7779C12.962 10.6945 13.1387 10.6214 13.2689 10.4911C13.3991 10.3609 13.4723 10.1843 13.4723 10.0001Z" fill="#D9D9D9"/>
