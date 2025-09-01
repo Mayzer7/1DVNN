@@ -3143,9 +3143,11 @@ else
 
 						<div class="popup-data-inputs">
 							<div class="popup-data-calandar">
-								<p>Выберите желаемое время звонка</p>
+								<p class="popup-data-calandar-title">
+									Выберите желаемое время звонка
+								</p>
 
-								<div class="date-picker" id="datePicker">
+								<button class="date-picker" id="datePicker">
 									<div class="data-picker-left-side">
 										<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<path d="M7.2223 9.99996H5.83341C5.06744 9.99996 4.44453 10.6229 4.44453 11.3888V12.7777C4.44453 13.5437 5.06744 14.1666 5.83341 14.1666H7.2223C7.98828 14.1666 8.61119 13.5437 8.61119 12.7777V11.3888C8.61119 10.6229 7.98828 9.99996 7.2223 9.99996ZM5.83341 12.7777V11.3888H7.2223V12.7777H5.83341ZM14.8612 3.05551H14.1667V2.36107C14.1667 1.97774 13.8563 1.66663 13.4723 1.66663C13.0883 1.66663 12.7779 1.97774 12.7779 2.36107V3.05551H7.2223V2.36107C7.2223 1.97774 6.91189 1.66663 6.52786 1.66663C6.14383 1.66663 5.83341 1.97774 5.83341 2.36107V3.05551H5.13897C3.22439 3.05551 1.66675 4.61315 1.66675 6.52774V14.8611C1.66675 16.7757 3.22439 18.3333 5.13897 18.3333H14.8612C16.7758 18.3333 18.3334 16.7757 18.3334 14.8611V6.52774C18.3334 4.61315 16.7758 3.05551 14.8612 3.05551ZM5.13897 4.4444H14.8612C16.0098 4.4444 16.9445 5.37913 16.9445 6.52774V7.22218H3.05564V6.52774C3.05564 5.37913 3.99036 4.4444 5.13897 4.4444ZM14.8612 16.9444H5.13897C3.99036 16.9444 3.05564 16.0097 3.05564 14.8611V8.61107H16.9445V14.8611C16.9445 16.0097 16.0098 16.9444 14.8612 16.9444Z" fill="#D9D9D9"/>
@@ -3161,7 +3163,7 @@ else
 											<path d="M3 6L8 11L13 6" stroke="#282828" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 										</svg>
 									</div>
-								</div>
+								</button>
 
 								<!-- Календарь -->
 								<div class="calendar-popup" id="calendarPopup" role="dialog" aria-modal="false" aria-hidden="true">
@@ -3196,7 +3198,7 @@ else
 							</div>
 
 							<div class="time-picker-wrapper">
-								<div class="time-picker" id="timePicker" aria-haspopup="listbox" aria-expanded="false" tabindex="0">
+								<button class="time-picker" id="timePicker" aria-haspopup="listbox" aria-expanded="false" tabindex="0">
 									<div class="time-picker-left-side">
 									<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<path d="M10.0001 18.3334C5.40494 18.3334 1.66675 14.5952 1.66675 10.0001C1.66675 5.40494 5.40494 1.66675 10.0001 1.66675C14.5952 1.66675 18.3334 5.40494 18.3334 10.0001C18.3334 14.5952 14.5952 18.3334 10.0001 18.3334ZM10.0001 3.05564C6.17091 3.05564 3.05564 6.17091 3.05564 10.0001C3.05564 13.8292 6.17091 16.9445 10.0001 16.9445C13.8292 16.9445 16.9445 13.8292 16.9445 10.0001C16.9445 6.17091 13.8292 3.05564 10.0001 3.05564ZM13.4723 10.0001C13.4723 9.8159 13.3991 9.63927 13.2689 9.50903C13.1387 9.3788 12.962 9.30564 12.7779 9.30564H10.6945V5.83341C10.6945 5.64924 10.6214 5.4726 10.4911 5.34237C10.3609 5.21213 10.1843 5.13897 10.0001 5.13897C9.8159 5.13897 9.63927 5.21213 9.50903 5.34237C9.3788 5.4726 9.30564 5.64924 9.30564 5.83341V10.0001C9.30564 10.1843 9.3788 10.3609 9.50903 10.4911C9.63927 10.6214 9.8159 10.6945 10.0001 10.6945H12.7779C12.962 10.6945 13.1387 10.6214 13.2689 10.4911C13.3991 10.3609 13.4723 10.1843 13.4723 10.0001Z" fill="#D9D9D9"/>
@@ -3210,7 +3212,7 @@ else
 										<path d="M3 6L8 11L13 6" stroke="#282828" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 									</svg>
 									</div>
-								</div>
+								</button>
 
 								<ul class="time-list" id="timeList" role="listbox" aria-labelledby="timePicker">
 									<li class="time-item" data-value="09:00–10:00" role="option">09:00–10:00</li>
@@ -3218,11 +3220,13 @@ else
 									<li class="time-item" data-value="12:00–13:00" role="option">12:00–13:00</li>
 
 										
-									<li class="time-item" data-value="14:00–15:00" aria-disabled="true" role="option">14:00–15:00</li>
+									<li class="time-item" data-value="14:00–15:00" role="option">14:00–15:00</li>
 
 									<li class="time-item" data-value="16:00–17:00" role="option">16:00–17:00</li>
 								</ul>
-								</div>
+							</div>
+
+							<textarea name="comment" placeholder="Комментарий" id="" class="comment-textarea"></textarea>
 						</div>
 								
 						
@@ -3244,12 +3248,12 @@ else
 			
 			<div class="licence_block styled_switch checkbox_style">
 				<input id="licenses_popup_CALLBACK2_f1" name="licenses_popup_f1" required="" value="Y" aria-required="true" type="checkbox" checked="checked">
-				<label for="licenses_popup_CALLBACK2_f1">Я ознакомлен и принимаю условия <a href="/politika-konfidentsialnosti/"> политики в отношении обработки персональных данных</a></label>
+				<label for="licenses_popup_CALLBACK2_f1">Я ознакомлен и принимаю условия <a href="/politika-konfidentsialnosti/"> политики<br> в отношении обработки персональных данных</a></label>
 			</div>				
 			
 			<div class="licence_block styled_switch checkbox_style">
 				<input id="rek_rkv2" name="checkboxpromo" aria-required="true" type="checkbox" checked="checked">
-				<label for="rek_rkv2"><a href="/soglasie-na-poluchenie-reklamnykh-rassylok/" target="_blank">Согласие на получение рекламно-информационных материалов</a></label>
+				<label for="rek_rkv2">Я соглашаюсь на получение <a href="/soglasie-na-poluchenie-reklamnykh-rassylok/" target="_blank">рекламно-информационных материалов</a></label>
 			</div>					
 								
 			<div class="clear"></div>

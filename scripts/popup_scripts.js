@@ -14,13 +14,11 @@ document.addEventListener('DOMContentLoaded', () => {
     return d.toLocaleDateString('ru-RU', { day: 'numeric', month: 'long', year: 'numeric' });
   }
 
-  try {
-    const parsed = new Date(displayText.textContent.trim());
-    if (!isNaN(parsed)) { selected = parsed; }
-  } catch(e){}
-
   const today = new Date();
-  if (!selected) selected = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+  const todayDateOnly = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+
+  selected = todayDateOnly;
+  displayText.textContent = formatRu(selected);
 
   viewYear = selected.getFullYear();
   viewMonth = selected.getMonth();
@@ -148,6 +146,8 @@ document.addEventListener('DOMContentLoaded', () => {
   renderCalendar(viewYear, viewMonth);
 });
 
+
+
 (function () {
   const picker = document.getElementById('timePicker');
   const list = document.getElementById('timeList');
@@ -167,6 +167,24 @@ document.addEventListener('DOMContentLoaded', () => {
     if (list.classList.contains('show')) closeList(); else openList();
   }
 
+  (function setDefaultTime() {
+    if (!list) return;
+    const items = Array.from(list.querySelectorAll('.time-item'));
+    if (!items.length) return;
+
+    const firstAvailable = items.find(i => {
+      const aria = i.getAttribute('aria-disabled');
+      const hasDisabledClass = i.classList.contains('time-item--disabled') || i.classList.contains('time-item--disabled');
+      return aria !== 'true' && !hasDisabledClass;
+    }) || items[0]; 
+
+    items.forEach(i => i.classList.remove('time-item--selected'));
+    firstAvailable.classList.add('time-item--selected');
+
+    const val = firstAvailable.dataset.value || firstAvailable.textContent.trim();
+    text.textContent = val;
+  })();
+
   picker.addEventListener('click', (e) => {
     e.stopPropagation();
     toggleList();
@@ -175,7 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
   list.addEventListener('click', (e) => {
     const item = e.target.closest('.time-item');
     if (!item) return;
-    if (item.classList.contains('time-item--disabled')) return;
+    if (item.classList.contains('time-item--disabled') || item.getAttribute('aria-disabled') === 'true') return;
 
     list.querySelectorAll('.time-item').forEach(i => i.classList.remove('time-item--selected'));
 

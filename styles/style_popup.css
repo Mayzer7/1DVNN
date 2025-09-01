@@ -27,8 +27,11 @@
 
 #popup_callback2 {
     cursor: default;
-    height: 100%;
-    max-height: 706px;
+}
+
+#popup_callback2 .header3 {
+  padding: 0px;
+  padding-bottom: 24px;
 }
 
 .popup_content {
@@ -37,6 +40,16 @@
 
 .popup-data-calandar { 
     position: relative; 
+}
+
+.popup-data-calandar-title {
+  text-align: center;
+  color: #001D36;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 0px;
+  padding-top: 24px;
+  padding-bottom: 12px;
 }
 
 .data-picker-right-side svg {
@@ -275,4 +288,115 @@
 .time-list::-webkit-scrollbar-thumb { 
     background: rgba(0,0,0,0.08);
     border-radius:8px; 
+}
+
+.comment-textarea {
+  min-height: 90px;
+  resize: none;
+}
+
+.checkbox_style label,
+.checkbox_style label a {
+  font-size: 16px !important;
+}
+
+.ajax_form .licence_block {
+  margin-bottom: 12px;
+}
+
+.callback-form_btn {
+  margin-top: 4px;
+}
+
+.checkbox_style label::before {
+  width: 20px;
+  height: 20px;
+}
+
+.checkbox_style input[type="checkbox"]:checked + label::after {
+    content: none !important;
+    font-family: unset !important;
+    all: unset !important;
+}
+
+.checkbox_style {
+  position: relative;
+}
+
+.checkbox_style label {
+  display: inline-block;
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  line-height: 20px;
+  font-size: 16px !important;
+}
+
+.checkbox_style label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  box-sizing: border-box;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  pointer-events: none; 
+}
+
+.checkbox_style input[type="checkbox"] {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;   
+  height: 20px;   
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  z-index: 2;    
+  cursor: pointer;
+}
+
+.checkbox_style input[type="checkbox"]:checked + label::before {
+  background-color: #9D432C;
+  border-color: #9D432C;
+  background-image: url("../pics/check-mark.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 16px 16px;
+}
+
+.checkbox_style label a {
+  pointer-events: auto;
+  color: inherit;
+}
+
+.checkbox_style label {
+  margin-right: 0px;
+}
+
+.ajax_form .popup_content {
+  padding: 33px 30px;
+}
+
+.date-open-btn,
+.time-open-btn {
+  display: none;
+  margin-top: 8px;
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  background: #fff;
+  cursor: pointer;
+}
+
+@media (hover: none) and (pointer: coarse), (max-width: 820px) {
+  .date-open-btn,
+  .time-open-btn {
+    display: inline-block;
+  }
 }
