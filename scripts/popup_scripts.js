@@ -83,6 +83,12 @@ document.addEventListener('DOMContentLoaded', () => {
             ev.stopPropagation();
             selected = new Date(year, month, d);
             displayText.textContent = formatRu(selected);
+
+            try {
+              picker.dataset.userSelected = 'true';
+              picker.dataset.selectedText = formatRu(selected);
+            } catch(e){  }
+
             closePopup();
           };
           el.addEventListener('pointerdown', onSelect);
@@ -177,6 +183,9 @@ document.addEventListener('DOMContentLoaded', () => {
         tList.classList.add('show');
         tPicker.setAttribute('aria-expanded', 'true');
 
+        const formEl = root.closest('form');
+        if (formEl) formEl.classList.add('no-nav');
+
         const outside = (e) => {
           if (!tPicker.contains(e.target) && !tList.contains(e.target)) closeList();
         };
@@ -191,6 +200,10 @@ document.addEventListener('DOMContentLoaded', () => {
         tPicker.classList.remove('open');
         tList.classList.remove('show');
         tPicker.setAttribute('aria-expanded', 'false');
+
+        const formEl = root.closest('form');
+        if (formEl) formEl.classList.remove('no-nav');
+
         if (tList._outsideHandler) document.removeEventListener('pointerdown', tList._outsideHandler);
         if (tList._keyHandler) document.removeEventListener('keydown', tList._keyHandler);
         tList._outsideHandler = tList._keyHandler = null;
@@ -200,15 +213,34 @@ document.addEventListener('DOMContentLoaded', () => {
       tPicker.addEventListener('pointerdown', (e) => { e.stopPropagation(); e.preventDefault(); toggleList(); });
 
       tList.addEventListener('pointerdown', (e) => {
-        const item = e.target.closest('.time-item');
-        if (!item) return;
-        if (item.classList.contains('time-item--disabled') || item.getAttribute('aria-disabled') === 'true') return;
-        tList.querySelectorAll('.time-item').forEach(i => i.classList.remove('time-item--selected'));
-        item.classList.add('time-item--selected');
-        const val = item.dataset.value || item.textContent.trim();
-        tText.textContent = val;
-        closeList();
-      });
+      if (tList.classList.contains('show')) {
+        const anchor = e.target.closest('a');
+        if (anchor) {
+          e.preventDefault();
+          e.stopPropagation();
+        } else {
+          e.preventDefault();
+        }
+      }
+
+      const item = e.target.closest('.time-item');
+      if (!item) return;
+
+      if (item.classList.contains('time-item--disabled') || item.getAttribute('aria-disabled') === 'true') return;
+
+      tList.querySelectorAll('.time-item').forEach(i => i.classList.remove('time-item--selected'));
+      item.classList.add('time-item--selected');
+
+      const val = item.dataset.value || item.textContent.trim();
+      if (tText) tText.textContent = val;
+
+      if (tPicker) {
+        tPicker.dataset.userSelected = 'true';
+        tPicker.dataset.selectedTime = val;
+      }
+
+      closeList();
+    });
 
       tList.addEventListener('keydown', (e) => {
         const focused = document.activeElement;
@@ -225,3 +257,309 @@ document.addEventListener('DOMContentLoaded', () => {
     } 
   });
 });
+
+
+
+// Модальное окно Успеха 
+
+(function(){
+  var inited = false;
+  var overlays = {}; 
+
+  function init() {
+    if (inited) return;
+    inited = true;
+
+    var nodeList = document.querySelectorAll('.modal-overlay');
+    if (!nodeList || nodeList.length === 0) {
+      console.warn('Нет элементов .modal-overlay в DOM');
+      return;
+    }
+
+    nodeList.forEach(function(ov, i){
+      var type = (ov.dataset && ov.dataset.modal) ? ov.dataset.modal.toLowerCase()
+                : (i === 0 ? 'success' : (i === 1 ? 'error' : 'modal' + i));
+      overlays[type] = ov;
+
+      ov.setAttribute('aria-hidden', ov.classList.contains('open') ? 'false' : 'true');
+
+      ov.addEventListener('click', function(e){
+        if (e.target === ov) hideByType(type);
+      });
+
+      var closeBtns = ov.querySelectorAll('.success-modal-close, .modal-go-back-btn');
+      closeBtns.forEach(function(btn){
+        btn.addEventListener('click', function(e){
+          e.preventDefault();
+          hideByType(type);
+        });
+      });
+    });
+  }
+
+  function showByType(type) {
+    if (!inited && document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function onLoad(){
+        init();
+        showByType(type); 
+      }, { once: true });
+      return;
+    }
+
+    init();
+    var ov = overlays[type];
+    if (!ov) {
+      console.warn('Overlay не найден для типа:', type);
+      return;
+    }
+    ov.classList.add('open');
+    ov.setAttribute('aria-hidden', 'false');
+  }
+
+  function hideByType(type) {
+    if (!inited && document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function(){
+        init();
+        hideByType(type);
+      }, { once: true });
+      return;
+    }
+
+    init();
+    var ov = overlays[type];
+    if (!ov) return;
+    ov.classList.remove('open');
+    ov.setAttribute('aria-hidden', 'true');
+  }
+
+  window.showSuccessModal = function(){ showByType('success'); };
+  window.hideSuccessModal = function(){ hideByType('success'); };
+  window.showErrorModal   = function(){ showByType('error'); };
+  window.hideErrorModal   = function(){ hideByType('error'); };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init, { once: true });
+  } else {
+    init();
+  }
+})();
+
+
+// Вызовы и скрытие модальных окон
+
+// showSuccessModal();
+// hideSuccessModal();
+// showErrorModal();
+// hideErrorModal();
+
+
+
+
+
+
+
+
+(function(){
+  function formatRuFromText(text) { return text && text.trim() ? text.trim() : null; }
+  function todayRu(){ return new Date().toLocaleDateString('ru-RU', { day: 'numeric', month: 'long', year: 'numeric' }); }
+
+  document.addEventListener('pointerdown', function(e){
+    const day = e.target.closest('.calendar-grid .day');
+    if (day && !day.classList.contains('muted')) {
+      const root = day.closest('.popup-data-inputs');
+      if (!root) return;
+      const picker = root.querySelector('.date-picker');
+      const display = root.querySelector('.data-picker-text');
+      if (picker && display) {
+        picker.dataset.userSelected = 'true';
+        picker.dataset.selectedText = formatRuFromText(display.textContent);
+      }
+    }
+    const timeItem = e.target.closest('.time-item');
+    if (timeItem) {
+      const root = timeItem.closest('.popup-data-inputs');
+      if (!root) return;
+      const tPicker = root.querySelector('.time-picker');
+      const val = timeItem.dataset.value || timeItem.textContent.trim();
+      if (tPicker) {
+        tPicker.dataset.userSelected = 'true';
+        tPicker.dataset.selectedTime = val;
+      }
+    }
+  }, true);
+
+  window.formReset = function(form){
+    if (!form) return;
+    try { form.reset(); } catch (e) {}
+    form.querySelectorAll('.invalid-checkbox').forEach(el => el.classList.remove('invalid-checkbox'));
+    const dateTextEls = form.querySelectorAll('.data-picker-text');
+    dateTextEls.forEach(el => el.textContent = todayRu());
+    form.querySelectorAll('.calendar-grid .day.selected').forEach(d => d.classList.remove('selected'));
+    form.querySelectorAll('.date-picker, .time-picker').forEach(p => {
+      delete p.dataset.userSelected;
+      delete p.dataset.selectedText;
+      delete p.dataset.selectedTime;
+    });
+    form.querySelectorAll('.time-list').forEach(list => {
+      const parent = list.closest('.popup-data-inputs');
+      const tText = parent && parent.querySelector('.time-picker-text');
+      const first = list.querySelector('.time-item:not(.time-item--disabled)') || list.querySelector('.time-item');
+      if (tText && first) tText.textContent = first.dataset.value || first.textContent.trim();
+      list.querySelectorAll('.time-item').forEach(i => i.classList.remove('time-item--selected'));
+      if (first) first.classList.add('time-item--selected');
+      list.classList.remove('show');
+    });
+    form.querySelectorAll('.calendar-popup.open').forEach(p => p.classList.remove('open'));
+    form.querySelectorAll('.time-picker.open').forEach(p => p.classList.remove('open'));
+  };
+
+  function handleFormSubmit(e){
+    const form = e.target;
+    if (!(form && form.tagName === 'FORM')) return;
+    e.preventDefault();
+
+    form.querySelectorAll('.invalid-checkbox').forEach(el => el.classList.remove('invalid-checkbox'));
+
+    const requiredCheckboxes = Array.from(form.querySelectorAll('input[type="checkbox"]')).filter(cb => cb.hasAttribute('required') || cb.getAttribute('aria-required') === 'true' );
+    let invalid = false;
+    requiredCheckboxes.forEach(cb => {
+      if (!cb.checked) {
+        cb.classList.add('invalid-checkbox');
+        const id = cb.getAttribute('id');
+        if (id) {
+          const lab = form.querySelector('label[for="' + id + '"]');
+          if (lab) lab.classList.add('invalid-checkbox');
+        }
+        invalid = true;
+      }
+    });
+    if (invalid) return;
+
+    const formData = new FormData(form);
+    const dataObj = {};
+    for (const [k, v] of formData.entries()) {
+      if (dataObj.hasOwnProperty(k)) {
+        if (!Array.isArray(dataObj[k])) dataObj[k] = [dataObj[k]];
+        dataObj[k].push(v);
+      } else {
+        dataObj[k] = v;
+      }
+    }
+
+    const datePicker = form.querySelector('.date-picker');
+    let selectedDate = null;
+    if (datePicker) {
+      if (datePicker.dataset.userSelected === 'true' || datePicker.dataset.selectedText) {
+        selectedDate = datePicker.dataset.selectedText || (form.querySelector('.data-picker-text') && form.querySelector('.data-picker-text').textContent.trim());
+      } else {
+        selectedDate = todayRu();
+      }
+    } else {
+      selectedDate = todayRu();
+    }
+    if (selectedDate) dataObj.selected_date = selectedDate;
+
+    const timePicker = form.querySelector('.time-picker');
+    let selectedTime = null;
+    if (timePicker) {
+      if (timePicker.dataset.userSelected === 'true' || timePicker.dataset.selectedTime) {
+        selectedTime = timePicker.dataset.selectedTime || (form.querySelector('.time-picker-text') && form.querySelector('.time-picker-text').textContent.trim());
+      } else {
+        const tList = form.querySelector('.time-list');
+        if (tList) {
+          const preselected = tList.querySelector('.time-item.time-item--selected') || tList.querySelector('.time-item:not(.time-item--disabled)') || tList.querySelector('.time-item');
+          if (preselected) selectedTime = preselected.dataset.value || preselected.textContent.trim();
+        } else {
+          selectedTime = (form.querySelector('.time-picker-text') && form.querySelector('.time-picker-text').textContent.trim()) || null;
+        }
+      }
+    } else {
+      selectedTime = null;
+    }
+    if (selectedTime) dataObj.selected_time = selectedTime;
+
+    const pageUrlInput = form.querySelector('input[name="page_url"], input[name="page_url2"]');
+    if (pageUrlInput) dataObj.page_url = pageUrlInput.value;
+    dataObj.submitted_at = (new Date()).toISOString();
+
+    console.log('Заявка:', dataObj);
+
+    formReset(form);
+
+  }
+
+  document.addEventListener('DOMContentLoaded', function(){
+    const forms = Array.from(document.querySelectorAll('form'));
+    forms.forEach(f => {
+      if (f._hasCustomSubmitHandler) return;
+      f.addEventListener('submit', handleFormSubmit);
+      f._hasCustomSubmitHandler = true;
+    });
+  });
+})();
+
+
+
+
+
+
+
+
+// Блокируем переход по ссылкам когда выбираем дату или время
+
+let activePopups = 0; 
+let disableLinksListener = null;
+
+function disableAllLinks() {
+    if (!disableLinksListener) {
+        disableLinksListener = function(event) {
+            const target = event.target.closest('a');
+            if (target) {
+                event.preventDefault();
+                console.log('Переход по ссылке запрещён:', target.href);
+            }
+        };
+        document.addEventListener('click', disableLinksListener);
+    }
+}
+
+function enableAllLinks() {
+    if (disableLinksListener && activePopups === 0) {
+        document.removeEventListener('click', disableLinksListener);
+        console.log('Переходы по ссылкам разрешены');
+        disableLinksListener = null;
+    }
+}
+
+function watchPopup(selector) {
+    const elements = document.querySelectorAll(selector);
+
+    elements.forEach(el => {
+        const observer = new MutationObserver(mutations => {
+            mutations.forEach(mutation => {
+                if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+                    const target = mutation.target;
+                    const hasOpenClass = target.classList.contains('show') || target.classList.contains('open');
+
+                    if (hasOpenClass && !target.dataset.popupOpen) {
+                        target.dataset.popupOpen = 'true';
+                        console.log('Попап открыт', target);
+                        activePopups++;
+                        disableAllLinks();
+                    } else if (!hasOpenClass && target.dataset.popupOpen) {
+                        delete target.dataset.popupOpen;
+                        console.log('Попап закрыт', target);
+                        activePopups--;
+                        setTimeout(enableAllLinks, 50);
+                    }
+                }
+            });
+        });
+
+        observer.observe(el, { attributes: true, subtree: true });
+    });
+}
+
+// Отслеживаем все формы и меню
+watchPopup('form');
+watchPopup('.time-list');

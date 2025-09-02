@@ -1,3 +1,7 @@
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
 .date-picker {
     font-family: 'Montserrat', Arial, sans-serif !important;
     display: flex;
@@ -11,6 +15,7 @@
     color: #001D36;
     width: 100%;
     cursor: pointer;
+    white-space: nowrap;
 }
 
 .data-picker-left-side {
@@ -74,6 +79,7 @@
   transition: opacity 220ms ease, transform 220ms ease;
   opacity: 0;
   transform: translateY(-6px) scale(0.98);
+  margin-top: 8px;
 }
 
 .calendar-popup.open {
@@ -238,6 +244,7 @@
   z-index:50;
   display:none; 
   box-sizing:border-box;
+  margin: 0px !important;
 }
 
 .time-list.show { 
@@ -415,10 +422,9 @@
   -webkit-tap-highlight-color: rgba(0,0,0,0.06);
 }
 
-.calendar-popup { z-index: 99999 !important; -webkit-overflow-scrolling: touch; }
-.time-list { z-index: 99999 !important; -webkit-overflow-scrolling: touch; }
+.calendar-popup { z-index: 99999 !important;}
+.time-list { z-index: 99999}
 
-.time-list { -webkit-overflow-scrolling: touch; }
 
 .menu_form-descr,
 .callback_input {
@@ -437,6 +443,9 @@
 
 .iblock_add_main_form_2 .popup-data-calandar-title {
   text-align: left;
+  padding: 0px;
+  padding-top: 16px;
+  padding-bottom: 12px;
 }
 
 .iblock_add_main_form_2 .time-picker {
@@ -468,12 +477,285 @@
 }
 
 
-.main_form_3_container {
+.main-form-3-section {
+  background-color: #F5F5F5;
+  padding: 64px; 
+}
+
+.form-first-fields {
   display: flex;
+  gap: 8px;
+}
+
+.form-first-fields .form_field {
+  width: 100%;
+  margin-right: 0%;
+  margin-bottom: 0px !important;
+}
+
+
+
+.main-form-3-data-inputs {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+
+.main-form-3-data-inputs .popup-data-calandar,
+.main-form-3-data-inputs .time-picker-wrapper {
+  width: 100%;
+}
+
+.main-form-3-data-inputs .time-picker {
+  margin-top: 0px;
+}
+
+.main-form-3-form-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
   align-items: flex-end;
 }
 
-.main-form-3-right-side {
-  padding-bottom: 40px;
-  padding-right: 40px;
+.main-form-3-form-right-side .btn {
+  width: 100%;
 }
+
+.main-form-3-policy-fields {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.main-form-3-form-container .popup-data-calandar-title {
+  text-align: left;
+}
+
+.main-form-3-form-container textarea {
+  margin-bottom: -3px;
+  margin-top: 8px;
+}
+
+.main-form-3-desc {
+  padding: 16px 0px;
+}
+
+.main-form-3-form .menu_form-title {
+  margin-bottom: 0px;
+}
+
+.main-form-3-form-container .popup-data-calandar-title {
+  padding: 0px;
+  padding-top: 16px;
+  padding-bottom: 12px;
+}
+
+@media (max-width: 1230px) {
+  .main-form-3-form-container {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .main-form-3-section {
+    padding: 64px 64px;
+  }
+}
+
+@media (max-width: 800px) {
+  .form-first-fields {
+    flex-direction: column;
+    gap: 0px;
+  }
+
+  .main-form-3-data-inputs {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .main-form-3-section {
+    padding: 60px 16px;
+  }
+}
+
+
+/* Модальное окно Успеха */
+
+.modal-overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.6);
+  z-index: 999998;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.33s ease;
+}
+
+.modal-overlay.open{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.success-modal{
+  background-color: #F5F5F5;
+  z-index: 999999;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+  transform: translateY(-8px) scale(0.995);
+  opacity: 0;
+  transition: transform 0.33s ease, opacity 0.33s ease;
+  max-width: 540px;
+  width: calc(100% - 40px);
+}
+
+.modal-overlay.open .success-modal{
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+.success-modal-close,
+.modal-go-back-btn{
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.success-modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.success-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #9D432C;
+}
+
+.success-modal-close:hover {
+  color: #6B7280; 
+  border: none;
+  outline: none;
+}
+
+.success-modal-title {
+  font-size: 23px;
+  font-weight: 700;
+  color: #001D36;
+  text-transform: uppercase;
+  padding: 0px;
+  padding-bottom: 16px;
+}
+
+.success-modal-text {
+  color: #001D36;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 0px;
+  padding-bottom: 32px;
+}
+
+.modal-go-back-btn {
+  font-family: 'Montserrat', Arial, sans-serif !important;
+  background-color: #9D432C;
+  border: none;
+  font-size: 16px;
+  color: #FFFFFF;
+  font-weight: 400;
+  width: 100%;
+  padding: 10px 0px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.success-modal-content-inner {
+  padding: 50px 30px;
+}
+
+.error-modal-title {
+  font-size: 23px;
+  font-weight: 700;
+  color: #001D36;
+  text-transform: uppercase;
+  padding: 0px;
+  padding-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+@media (max-width: 600px) {
+  .success-modal-text {
+    font-size: 14px;
+  }
+}
+
+.burger-menu-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.burger-menu-form .form-first-fields {
+  flex-direction: column; 
+  gap: 8px !important;
+}
+
+.burger-menu-form input {
+  font-family: 'Montserrat', Arial, sans-serif !important; 
+  border: 1px solid #d1d5db;
+  background-color: #FFFFFF;
+  padding: 10px 15px;
+  width: 100%;
+  font-size: 16px;
+}
+
+.burger-menu-form input:focus,
+.burger-menu-form input:active {
+  outline: none;
+  box-shadow: none;
+  border-color: #d1d5db; 
+}
+
+.invalid-checkbox {
+  outline: 1px solid #ef4444 !important;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.invalid-checkbox,
+.invalid-checkbox + label {
+  transition: outline 180ms ease;
+}
+
+
+
+
+.ui-popup-open .main-form-3-policy-fields a,
+.ui-popup-open a:not(.allow-during-popup) {
+  pointer-events: none;
+  opacity: 0.9; 
+}
+
+.ui-popup-open .calendar-popup a,
+.ui-popup-open .time-list a {
+  pointer-events: auto;
+}
+
+
+
+.no-nav a { pointer-events: none !important; }
